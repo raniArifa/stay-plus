@@ -1,6 +1,4 @@
-# Realstatic
-
-Realstatic Nextjs Theme Development Structure.
+Nextjs Theme Development Structure.
 
 ## Getting Started
 
