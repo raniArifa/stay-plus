@@ -43,7 +43,7 @@ const Navbar = () => {
                 width={119}
               />
             </Link>
-            <a href="tel:2329872 " className="navbar-number align-items-center">
+            {/* <a href="tel:2329872 " className="navbar-number align-items-center">
               <svg
                 width={6}
                 height={7}
@@ -55,7 +55,7 @@ const Navbar = () => {
               </svg>
               <Phone size={24} weight="bold" />
               (+46) 8 410 337 - 80
-            </a>
+            </a> */}
           </div>
           <div className=" d-none d-sm-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last">
           {/*   <ul className="list-unstyled m-0">
@@ -69,15 +69,15 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul> */}
-{/* 
+
             <a
               className="btn btn-small btn-outline d-none d-lg-inline-block"
               data-bs-toggle="modal"
               href="#login"
               role="button"
             >
-              Log In
-            </a> */}
+              Leave a Message
+            </a> 
           </div>
           <button
             className="navbar-toggler collapsed"

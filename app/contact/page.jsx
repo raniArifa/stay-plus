@@ -1,10 +1,53 @@
 "use client";
-import {socialMediaData} from "@/data/data";
 import useTitle from "@/hooks/useTitle";
-import {EnvelopeSimpleOpen, Phone, User} from "phosphor-react";
+import { useState } from "react";
+import { EnvelopeSimpleOpen, House, Pencil, Phone, User, CaretDown } from "phosphor-react";
+
 
 const Contact = () => {
-  useTitle("Contact Us | RealStatic");
+  const [types, setTypes] = useState(["Villa", "Apartments", "Cottage"]);
+  const [typeOfHousing, setTypeOfHousing] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [numberOfRooms, setNumberOfRooms] = useState("");
+  const [extraInfo, setExtraInfo] = useState("");
+  const [review, setReview] = useState(false);
+  const handleSelect = (value) => {
+    setTypeOfHousing(value);
+    setReview(!review);
+  }
+
+  const handleSubmit = () => {
+    // validate all required fields
+    const requestBody = {
+      fullName,
+      emailAddress,
+      phoneNumber,
+      typeOfHousing,
+      numberOfRooms,
+      extraInfo
+    }
+    fetch("api/saveCustomerRequest", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    }).then(response => {
+      if (response.ok) {
+        // Show success message on UI
+        handleReset();
+      }
+    }).catch(error => {
+      throw error;
+    })
+  }
+  const handleReset = () => {
+    setTypeOfHousing(null);
+    setTypes([...types]);
+  };
+  useTitle("Contact Us | StayPlus");
   return (
     <section className="contact">
       <div className="container">
@@ -13,9 +56,7 @@ const Contact = () => {
             <div className="contact-title text-center">
               <h1>Get In Touch</h1>
               <p>
-                On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
-                demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the
-                pain and trouble.
+                Stay Plus will help you with your property today.Are you looking for a short-term solution for your clients or interested in our service? Contact our sales team to learn more sales@staysthlm.se
               </p>
             </div>
           </div>
@@ -34,6 +75,7 @@ const Contact = () => {
                       type="text"
                       className="form-control"
                       placeholder="Full Name"
+                      onBlur={(event) => setFullName(event.target.value)}
                     />
                   </div>
                   <div className="input-group">
@@ -44,6 +86,7 @@ const Contact = () => {
                       type="email"
                       className="form-control"
                       placeholder="Email Address"
+                      onBlur={(event) => setEmailAddress(event.target.value)}
                     />
                   </div>
                   <div className="input-group">
@@ -54,21 +97,60 @@ const Contact = () => {
                       type="text"
                       className="form-control"
                       placeholder="Phone Number"
+                      onBlur={(event) => setPhoneNumber(event.target.value)}
                     />
                   </div>
                   <div className="input-group">
-                    <textarea
+                    <div className="filter-buy width-100">
+                      <div className="dropholder">
+                        <div
+                          onClick={() => setReview(!review)}
+                          className={`customdropdown d-flex justify-content-between align-items-center  ${review ? "active" : ""
+                            }`}
+                        >
+                          <p className="btn btn-large btn-outline">
+                            {typeOfHousing && <span className="float-left">{typeOfHousing}</span>}
+                            <span className="dummyItem float-left">Type of Housing </span>
+                            <CaretDown size={20} className="float-right" />
+                          </p>
+                        </div>
+                        <ul className="dropdownMenu">
+                          {types.map((item) => (
+                            <li key={item} onClick={() => handleSelect(item)}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <House size={20} />
+                    </span>
+                    <input
+                      type="text"
                       className="form-control"
-                      placeholder="Message"
-                      rows={15}
-                      cols={20}
-                      defaultValue={""}
+                      placeholder="No. of Rooms, Size in sq. m"
+                      onBlur={(event) => setNumberOfRooms(event.target.value)}
+                    />
+                  </div>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <Pencil size={20} />
+                    </span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Add some extra details?"
+                      onBlur={(event) => setExtraInfo(event.target.value)}
                     />
                   </div>
                   <div className="w-100 contact-form-button">
                     <button
                       type="submit"
                       className="btn btn-large"
+                      onSubmit={handleSubmit}
                     >
                       Send Message
                     </button>
@@ -76,23 +158,16 @@ const Contact = () => {
                 </form>
               </div>
               <div className="contact-form-address">
-                <h6>Office Address</h6>
-                <p>1421 San Pedro St, Los Angeles, CA 90015</p>
-                <a
-                  href="tel:+05656565656"
-                  className="phone d-flex align-items-center"
-                >
-                  <Phone size={24} />
-                  <span>(302) 555-0107</span>
-                </a>
-                <a
-                  href="mailto:staticmania@gmail.com"
-                  className="mail d-flex align-items-center"
-                >
-                  <EnvelopeSimpleOpen size={20} />
-                  <span>staticmania@gmail.com</span>
-                </a>
-                <div className="contact-social">
+                <h6>How this works?</h6>
+                <p>
+                  1. You contact us through this form. We get in touch with you with our plan.<br />
+
+                  2. We draw up a tailor-made lease agreement which benefits all parties.<br />
+
+                  3. We organize the administrative work with rental payments,invoices, receipts, check-lists and other documents so the rental will be as safe and smooth as possible.<br />
+                  4. We use online marketing and advertising tools to increase your property's visibility on rental platforms, ensuring it stands out and attracts more potential guests. </p>
+
+                {/*                 <div className="contact-social">
                   <h6>Socila Links</h6>
                   <ul className="list-unstyled list-inline">
                     {socialMediaData.map((media) => (
@@ -104,7 +179,7 @@ const Contact = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

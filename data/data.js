@@ -35,11 +35,11 @@ export const menuData = [
     parent: "About",
     link: "/about",
   },
-  {
+ /*  {
     id: 3,
     parent: "Listings",
     link: "/property",
-  },
+  }, */
   /* {
     id: 4,
     parent: "Agents",
@@ -669,34 +669,34 @@ export const testimonialData = [
   {
     id: 1,
     review:
-      "I can't wait to show it off and receive compliments on my impeccable taste. NextBid is truly a treasure trove for fashion enthusiasts, offering exclusive items at unbelievable prices.",
+      " I am constantly on the lookout for high quality apartments for my clients, They are always very responsive, professional and offer a great variety of apartments to my clients. From the initial options offered, to their presentation at viewings and move-ins, I can highly recommend their high quality services!",
     user: {
-      name: "John Smith",
-      img: "/images/testimonial/client1.png",
-      position: "Marketing Manager - Static Mania",
+      name: "Mianda S.",
+      img: "/images/testimonial/client1.jpg",
+      position: "Destination Consultant - Alfa",
     },
   },
   {
     id: 2,
     review:
-      "Discover fashion treasures at NextBid. Unleash your style game with exclusive pieces at amazing prices. Find your signature look and make a statement. Join the fashion revolution at NextBid",
+      "It is always easy to work with the nice and professional employees at Stay Sthlm when we are looking for housing for our corporate customers. I can warmly recommend Stay Sthlm when you are looking for corporate housing.",
     user: {
-      name: "Sarah Johnson",
-      img: "/images/testimonial/client2.png",
-      position: "Sales Executive - Static Mania",
+      name: "Viktoria L.",
+      img: "/images/testimonial/client2.jpg",
+      position: "Senior Relocation Consultant- Nordic Relocation Group AB",
     },
   },
   {
     id: 3,
     review:
-      "Flaunt impeccable style. NextBid: haven for fashion enthusiasts, offering exclusive pieces at incredible prices. Explore more. Find fashion treasure. Join the endless possibilities.",
+      "A professional and responsive company offering affordable short and long term accommodation to suit all needs. Stay Sthlm are efficient and friendly, one of our most trusted and reliable property agencies",
     user: {
-      name: "Michael Brown",
-      img: "/images/testimonial/client3.png",
-      position: "Customer Support - Static Mania",
+      name: "Jenny D.",
+      img: "/images/testimonial/client3.jpg",
+      position: "Alfa - The Scandinavian Mobility Services Company",
     },
-  },
-  {
+  }
+/*   {
     id: 5,
     review:
       "Elevate your fashion game with NextBid. Unlock exclusive styles at unbeatable prices. Discover your fashion identity and make heads turn. Experience the thrill of NextBid today!",
@@ -715,7 +715,7 @@ export const testimonialData = [
       img: "/images/testimonial/client3.png",
       position: "Operations Manager - Static Mania",
     },
-  },
+  }, */
 ];
 
 // BLOG POST DATA

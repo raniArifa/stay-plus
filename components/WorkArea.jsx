@@ -38,25 +38,25 @@ const WorkArea = () => {
               <div className="work-area--service--items order-2 order-md-1">
                 <SearchLocation />
                 <h4>
-                  Viewing & Content <br /> Production
+                  1. Viewing & Content <br /> Production
                 </h4>
               </div>
               <div className="work-area--service--items order-1 order-md-2">
                 <VisitIcon />
                 <h4>
-                  Legal <br /> & Contract
+                2.Legal <br /> & Contract
                 </h4>
               </div>
               <div className="work-area--service--items order-4 order-md-3">
                 <GetIcon />
                 <h4>
-                  Online <br /> Marketing
+                 3. Online <br /> Marketing
                 </h4>
               </div>
               <div className="work-area--service--items order-3 order-md-4">
                 <EnjoyIcon />
                 <h4>
-                  Stayplus <br /> Co-hosting
+                 4. Stayplus <br /> Co-hosting
                 </h4>
               </div>
             </div>

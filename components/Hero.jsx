@@ -3,9 +3,12 @@ import { MagnifyingGlass, MapPin } from "phosphor-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
 
 const Hero = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [city, setCity] = useState(false);
   const [property, setProperty] = useState(false);
   const [price, setPrice] = useState(false);
@@ -67,6 +70,20 @@ const Hero = () => {
                 Are you a property or home owner looking to maximize your earnings while minimizing the hassle? Look no further! Our professional co-hosting service is the key to unlocking the full potential of your property.
                 </p>
               </div>
+              
+              <div className="col-md-4 col-sm-6 text-md-end">
+                        <button
+                          className="btn btn-large submit-button d-flex align-items-center w-100 ms-auto justify-content-center"
+                          type="submit"
+                          id="5"
+                          onClick={() => router.push("/contact")}
+                        >                            Get in Touch
+
+                          {/* <MagnifyingGlass size={30} weight="bold" /> */}
+                          <span className="d-md-none d-inline-block">
+                          </span>
+                        </button>
+                      </div>
               {/* <div className="hero-form">
                 <nav>
                   <div className="nav nav-tabs" id="nav-tab" role="tablist">

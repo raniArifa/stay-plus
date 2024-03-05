@@ -22,12 +22,10 @@ const FeatureTop = () => {
     >
       <div className="col-lg-6 order-lg-1 order-2">
         <div className="feature-content">
-          <h3>Stay Plus is the long term solution for a short term stay</h3>
+          <h3>Why Co-Host with us?</h3>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. In a free hour, when our power of choice is untrammelled
-            and when nothing prevents our being able to do what we like best,
-            every pleasure is to be welcomed.
+          Professional co-hosting can be a valuable partnership for property owners, offering them support, expertise, and a pathway to increased profitability in the expanding rental market.
+Let's team up to make your property a true success story for Extra Income, Flexibility, Tourism and Hospitality Industry, Cultural Exchange, Affordability and Utilization of Empty Spaces.
           </p>
           <Link href="/contact" className="btn btn-small">
             Get Started
@@ -39,7 +37,7 @@ const FeatureTop = () => {
           <div className="col-6 ">
             <div className="feature-grid-image">
               <Image
-                src="/images/feature/feature1.png"
+                src="/images/feature/feature1.jpg"
                 height={327}
                 width={284}
                 alt="feature1"
@@ -51,7 +49,7 @@ const FeatureTop = () => {
               <Image
                 height={218}
                 width={284}
-                src="/images/feature/feature2.png"
+                src="/images/feature/feature2.jpg"
                 alt="feature2"
                 style={{
                   maxWidth: "100%",
@@ -65,7 +63,7 @@ const FeatureTop = () => {
               <Image
                 height={218}
                 width={284}
-                src="/images/feature/feature3.png"
+                src="/images/feature/feature3.jpg"
                 alt="feature3"
                 style={{
                   maxWidth: "100%",
@@ -75,7 +73,7 @@ const FeatureTop = () => {
               <Image
                 height={327}
                 width={284}
-                src="/images/feature/feature4.png"
+                src="/images/feature/feature4.jpg"
                 alt="feature4"
                 style={{
                   maxWidth: "100%",
