@@ -30,6 +30,17 @@ const Contact = () => {
     setFormValue({ ...formValue, [event.target.name]: event.target.value });
   };
 
+  const resetForm = () => {
+    setFormValue({
+      fullName: "",
+      emailAddress: "",
+      typeOfHousing: "",
+      phoneNumber: "",
+      numberOfRooms: "",
+      extraInfo: "",
+    })
+  }
+
   const handleSubmit = (event) => {
     fetch("api/saveCustomerRequest", {
       method: "POST",
@@ -50,6 +61,7 @@ const Contact = () => {
   };
   const handleReset = () => {
     setTypes([...types]);
+    resetForm();
   };
   useTitle("Contact Us | StayPlus");
   return (
