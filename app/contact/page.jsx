@@ -1,50 +1,54 @@
 "use client";
 import useTitle from "@/hooks/useTitle";
 import { useState } from "react";
-import { EnvelopeSimpleOpen, House, Pencil, Phone, User, CaretDown } from "phosphor-react";
-
+import {
+  EnvelopeSimpleOpen,
+  House,
+  Pencil,
+  Phone,
+  User,
+  CaretDown,
+} from "phosphor-react";
 
 const Contact = () => {
   const [types, setTypes] = useState(["Villa", "Apartments", "Cottage"]);
-  const [typeOfHousing, setTypeOfHousing] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [numberOfRooms, setNumberOfRooms] = useState("");
-  const [extraInfo, setExtraInfo] = useState("");
   const [review, setReview] = useState(false);
+  const [formValue, setFormValue] = useState({
+    fullName: "",
+    emailAddress: "",
+    typeOfHousing: "",
+    phoneNumber: "",
+    numberOfRooms: "",
+    extraInfo: "",
+  });
   const handleSelect = (value) => {
-    setTypeOfHousing(value);
+    setFormValue({ ...formValue, ["typeOfHousing"]: value });
     setReview(!review);
-  }
+  };
 
-  const handleSubmit = () => {
-    // validate all required fields
-    const requestBody = {
-      fullName,
-      emailAddress,
-      phoneNumber,
-      typeOfHousing,
-      numberOfRooms,
-      extraInfo
-    }
+  const onChange = (event) => {
+    setFormValue({ ...formValue, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
     fetch("api/saveCustomerRequest", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(requestBody),
-    }).then(response => {
-      if (response.ok) {
-        // Show success message on UI
-        handleReset();
-      }
-    }).catch(error => {
-      throw error;
+      body: JSON.stringify(formValue),
     })
-  }
+      .then((response) => {
+        if (response.ok) {
+          // Show success message on UI
+          handleReset();
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
   const handleReset = () => {
-    setTypeOfHousing(null);
     setTypes([...types]);
   };
   useTitle("Contact Us | StayPlus");
@@ -56,7 +60,9 @@ const Contact = () => {
             <div className="contact-title text-center">
               <h1>Get In Touch</h1>
               <p>
-                Stay Plus will help you with your property today.Are you looking for a short-term solution for your clients or interested in our service? Contact our sales team to learn more sales@staysthlm.se
+                Stay Plus will help you with your property today.Are you looking
+                for a short-term solution for your clients or interested in our
+                service? Contact our sales team to learn more sales@staysthlm.se
               </p>
             </div>
           </div>
@@ -66,16 +72,19 @@ const Contact = () => {
             <div className="contact-form">
               <div className="contact-form-layout">
                 <h4>Send Message</h4>
-                <form className="contact-form-items">
+                <form className="contact-form-items" onSubmit={handleSubmit}>
                   <div className="input-group">
                     <span className="input-group-text">
                       <User size={20} />
                     </span>
                     <input
                       type="text"
+                      name="fullName"
+                      value={formValue.fullName}
                       className="form-control"
                       placeholder="Full Name"
-                      onBlur={(event) => setFullName(event.target.value)}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -84,9 +93,12 @@ const Contact = () => {
                     </span>
                     <input
                       type="email"
+                      name="emailAddress"
+                      value={formValue.emailAddress}
                       className="form-control"
                       placeholder="Email Address"
-                      onBlur={(event) => setEmailAddress(event.target.value)}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -94,10 +106,13 @@ const Contact = () => {
                       <Phone size={20} />
                     </span>
                     <input
-                      type="text"
+                      type="number"
+                      name="phoneNumber"
+                      value={formValue.phoneNumber}
                       className="form-control"
                       placeholder="Phone Number"
-                      onBlur={(event) => setPhoneNumber(event.target.value)}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -105,12 +120,19 @@ const Contact = () => {
                       <div className="dropholder">
                         <div
                           onClick={() => setReview(!review)}
-                          className={`customdropdown d-flex justify-content-between align-items-center  ${review ? "active" : ""
-                            }`}
+                          className={`customdropdown d-flex justify-content-between align-items-center  ${
+                            review ? "active" : ""
+                          }`}
                         >
                           <p className="btn btn-large btn-outline">
-                            {typeOfHousing && <span className="float-left">{typeOfHousing}</span>}
-                            <span className="dummyItem float-left">Type of Housing </span>
+                            {formValue.typeOfHousing && (
+                              <span className="float-left">
+                                {formValue.typeOfHousing}
+                              </span>
+                            )}
+                            <span className="dummyItem float-left">
+                              Type of Housing{" "}
+                            </span>
                             <CaretDown size={20} className="float-right" />
                           </p>
                         </div>
@@ -129,10 +151,13 @@ const Contact = () => {
                       <House size={20} />
                     </span>
                     <input
-                      type="text"
+                      type="number"
+                      name="numberOfRooms"
+                      value={formValue.numberOfRooms}
                       className="form-control"
                       placeholder="No. of Rooms, Size in sq. m"
-                      onBlur={(event) => setNumberOfRooms(event.target.value)}
+                      onChange={onChange}
+                      required
                     />
                   </div>
                   <div className="input-group">
@@ -141,17 +166,15 @@ const Contact = () => {
                     </span>
                     <input
                       type="text"
+                      name="extraInfo"
+                      value={formValue.extraInfo}
                       className="form-control"
                       placeholder="Add some extra details?"
-                      onBlur={(event) => setExtraInfo(event.target.value)}
+                      onChange={onChange}
                     />
                   </div>
                   <div className="w-100 contact-form-button">
-                    <button
-                      type="submit"
-                      className="btn btn-large"
-                      onSubmit={handleSubmit}
-                    >
+                    <button type="submit" className="btn btn-large">
                       Send Message
                     </button>
                   </div>
@@ -160,12 +183,20 @@ const Contact = () => {
               <div className="contact-form-address">
                 <h6>How this works?</h6>
                 <p>
-                  1. You contact us through this form. We get in touch with you with our plan.<br />
-
-                  2. We draw up a tailor-made lease agreement which benefits all parties.<br />
-
-                  3. We organize the administrative work with rental payments,invoices, receipts, check-lists and other documents so the rental will be as safe and smooth as possible.<br />
-                  4. We use online marketing and advertising tools to increase your property's visibility on rental platforms, ensuring it stands out and attracts more potential guests. </p>
+                  1. You contact us through this form. We get in touch with you
+                  with our plan.
+                  <br />
+                  2. We draw up a tailor-made lease agreement which benefits all
+                  parties.
+                  <br />
+                  3. We organize the administrative work with rental
+                  payments,invoices, receipts, check-lists and other documents
+                  so the rental will be as safe and smooth as possible.
+                  <br />
+                  4. We use online marketing and advertising tools to increase
+                  your property's visibility on rental platforms, ensuring it
+                  stands out and attracts more potential guests.{" "}
+                </p>
 
                 {/*                 <div className="contact-social">
                   <h6>Socila Links</h6>
