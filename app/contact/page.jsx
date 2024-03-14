@@ -8,15 +8,19 @@ import {
   Phone,
   User,
   CaretDown,
+  Buildings,
 } from "phosphor-react";
 
 const Contact = () => {
-  const [types, setTypes] = useState(["Villa", "Apartments", "Cottage"]);
+  const [types, setTypes] = useState(["Apartments", "Villa", "Cottage"]);
   const [review, setReview] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [formValue, setFormValue] = useState({
     fullName: "",
+    companyName: "",
     emailAddress: "",
-    typeOfHousing: "",
+    typeOfHousing: "Apartments",
     phoneNumber: "",
     numberOfRooms: "",
     extraInfo: "",
@@ -33,8 +37,9 @@ const Contact = () => {
   const resetForm = () => {
     setFormValue({
       fullName: "",
+      companyName: "",
       emailAddress: "",
-      typeOfHousing: "",
+      typeOfHousing: "Apartments",
       phoneNumber: "",
       numberOfRooms: "",
       extraInfo: "",
@@ -42,6 +47,7 @@ const Contact = () => {
   }
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     fetch("api/saveCustomerRequest", {
       method: "POST",
       headers: {
@@ -51,11 +57,19 @@ const Contact = () => {
     })
       .then((response) => {
         if (response.ok) {
-          // Show success message on UI
-          handleReset();
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok.");
         }
       })
+      .then((data) => {
+        setSuccessMessage(data.message);
+        setErrorMessage(null);
+        handleReset();
+      })
       .catch((error) => {
+        setErrorMessage(error.message);
+        setSuccessMessage(null);
         throw error;
       });
   };
@@ -63,7 +77,7 @@ const Contact = () => {
     setTypes([...types]);
     resetForm();
   };
-  
+
   useTitle("Contact Us | StayPlus");
   return (
     <section className="contact">
@@ -84,6 +98,15 @@ const Contact = () => {
           <div className="col-12">
             <div className="contact-form">
               <div className="contact-form-layout">
+                {successMessage && (<div className="alert alert-success" role="alert">
+                  {successMessage}
+                </div>)
+                }
+                {errorMessage && (
+                  <div className="alert alert-danger" role="alert">
+                    {errorMessage}
+                  </div>)
+                }
                 <h4>Send Message</h4>
                 <form className="contact-form-items" onSubmit={handleSubmit}>
                   <div className="input-group">
@@ -95,9 +118,22 @@ const Contact = () => {
                       name="fullName"
                       value={formValue.fullName}
                       className="form-control"
-                      placeholder="Full Name"
+                      placeholder="Your Full Name"
                       onChange={onChange}
                       required
+                    />
+                  </div>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <Buildings size={20} />
+                    </span>
+                    <input
+                      type="text"
+                      name="companyName"
+                      value={formValue.companyName}
+                      className="form-control"
+                      placeholder="Company Name"
+                      onChange={onChange}
                     />
                   </div>
                   <div className="input-group">
@@ -133,19 +169,18 @@ const Contact = () => {
                       <div className="dropholder">
                         <div
                           onClick={() => setReview(!review)}
-                          className={`customdropdown d-flex justify-content-between align-items-center  ${
-                            review ? "active" : ""
-                          }`}
+                          className={`customdropdown d-flex justify-content-between align-items-center  ${review ? "active" : ""
+                            }`}
                         >
                           <p className="btn btn-large btn-outline">
+                            <span className="float-left housing-dropdown">
+                              <House size={20} />
+                            </span>
                             {formValue.typeOfHousing && (
-                              <span className="float-left">
+                              <span className="float-left type-of-housing">
                                 {formValue.typeOfHousing}
                               </span>
                             )}
-                            <span className="dummyItem float-left">
-                              Type of Housing{" "}
-                            </span>
                             <CaretDown size={20} className="float-right" />
                           </p>
                         </div>

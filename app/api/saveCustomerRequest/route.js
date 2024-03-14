@@ -20,6 +20,6 @@ export const POST = async (request, response) => {
       message: `Customer is created on ${body.creationTime} and email is sent to both recipent and admin`,
     });
   } catch (error) {
-    return Response.json({ errorMessage: "Erro during processing customer request", errorDetails: error });
+    return Response.json({ message: "Error during processing customer request", errorDetails: error });
   }
 };
