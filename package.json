@@ -14,7 +14,10 @@
     "eslint-config-next": "13.4.9",
     "framer-motion": "^10.12.18",
     "gray-matter": "^4.0.3",
+    "micro": "^10.0.1",
+    "mongodb": "^4.13.0",
     "next": "^14.1.0",
+    "nodemailer": "^6.9.9",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -23,8 +26,6 @@
     "react-slick": "^0.29.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.63.6",
-    "slick-carousel": "^1.8.1",
-    "mongodb": "^4.13.0",
-    "nodemailer": "^6.9.9"
+    "slick-carousel": "^1.8.1"
   }
 }

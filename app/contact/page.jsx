@@ -37,6 +37,7 @@ const Contact = () => {
     }).then(response => {
       if (response.ok) {
         // Show success message on UI
+        console.log("Success")
         handleReset();
       }
     }).catch(error => {
@@ -47,6 +48,7 @@ const Contact = () => {
     setTypeOfHousing(null);
     setTypes([...types]);
   };
+  
   useTitle("Contact Us | StayPlus");
   return (
     <section className="contact">
@@ -110,7 +112,7 @@ const Contact = () => {
                         >
                           <p className="btn btn-large btn-outline">
                             {typeOfHousing && <span className="float-left">{typeOfHousing}</span>}
-                            <span className="dummyItem float-left">Type of Housing </span>
+                            <span className="dummyItem float-left placeholder">Type of Housing </span>
                             <CaretDown size={20} className="float-right" />
                           </p>
                         </div>
@@ -148,9 +150,9 @@ const Contact = () => {
                   </div>
                   <div className="w-100 contact-form-button">
                     <button
-                      type="submit"
+                      type="button"
                       className="btn btn-large"
-                      onSubmit={handleSubmit}
+                      onClick={handleSubmit}
                     >
                       Send Message
                     </button>
