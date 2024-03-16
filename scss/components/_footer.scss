@@ -2,8 +2,10 @@
 26.  Footer Styles
 **********/
 .footer {
+  background-color: rgb(208, 233, 255);
   margin-top: $base-margin * 7.5;
   margin-bottom: $base-margin * 5;
+  padding: $base-padding *2.5;
   &-container {
     max-width: 1550px;
     @include media-breakpoint-only-lg {
@@ -80,7 +82,7 @@
     font-size: $base-font-size;
     font-weight: $semiBold-font-weight;
     line-height: 1.8;
-    margin-top: $base-margin * 7.5;
+    margin-top: $base-margin * 1.5;
     @include media-breakpoint-down-xl {
       max-width: 350px;
     }

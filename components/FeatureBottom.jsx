@@ -25,7 +25,7 @@ const FeatureBottom = () => {
           <Image
             height={589}
             width={537}
-            src="/images/feature/feature5.png"
+            src="/images/feature/feature5.jpg"
             alt="feature5"
             style={{
               maxWidth: "100%",
@@ -36,23 +36,37 @@ const FeatureBottom = () => {
       </div>
       <div className="col-md-6 col-lg-5 me-lg-auto ms-xl-auto order-xl-2 order-md-1">
         <div className="feature-content">
-          <h3>Secure payment system</h3>
+          <h3>Tech Driven <br ></br> Co-Hosting</h3>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. In a free hour, when our power of choice is untrammelled.
+          We leverage state-of-the-art tools and technology to deliver top-notch service and ensure your short-term rental property's success.
+‍
+Through digital tools we
+continuously monitor and optimize occupancy rates to increase property utilization and revenue. Managing last-minute changes, bookings and cancellations effectively.
           </p>
           <ul className="">
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Find excellent deals</span>
+              <span className="bold">More Time, Less Stress</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Friendly host &amp; Fast support</span>
+              <span className="bold">Increased Earnings</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Secure payment system</span>
+              <span className="bold">Property Growth</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">Online Visibilty</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">Legal Compliance</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">Market Insights</span>
             </li>
           </ul>
           <a href="/about" className="btn btn-small">
