@@ -22,8 +22,8 @@ const Contact = () => {
     emailAddress: "",
     typeOfHousing: "Apartments",
     phoneNumber: "",
-    numberOfRooms: "",
-    extraInfo: "",
+    numberOfApartments: "",
+    areaOfHousing: "",
   });
   const handleSelect = (value) => {
     setFormValue({ ...formValue, ["typeOfHousing"]: value });
@@ -41,8 +41,8 @@ const Contact = () => {
       emailAddress: "",
       typeOfHousing: "Apartments",
       phoneNumber: "",
-      numberOfRooms: "",
-      extraInfo: "",
+      numberOfApartments: "",
+      areaOfHousing: "",
     })
   }
 
@@ -87,9 +87,8 @@ const Contact = () => {
             <div className="contact-title text-center">
               <h1>Get In Touch</h1>
               <p>
-                Stay Plus will help you with your property today.Are you looking
-                for a short-term solution for your clients or interested in our
-                service? Contact our sales team to learn more sales@staysthlm.se
+                Stay Plus will help you with your property today.If you are looking
+                for a short-term solution for your clients, contact our sales team to learn more sales@staysthlm.se
               </p>
             </div>
           </div>
@@ -200,10 +199,10 @@ const Contact = () => {
                     </span>
                     <input
                       type="number"
-                      name="numberOfRooms"
-                      value={formValue.numberOfRooms}
+                      name="numberOfApartments"
+                      value={formValue.numberOfApartments}
                       className="form-control"
-                      placeholder="No. of Rooms, Size in sq. m"
+                      placeholder="No. of Apartments"
                       onChange={onChange}
                       required
                     />
@@ -214,10 +213,10 @@ const Contact = () => {
                     </span>
                     <input
                       type="text"
-                      name="extraInfo"
-                      value={formValue.extraInfo}
+                      name="areaOfHousing"
+                      value={formValue.areaOfHousing}
                       className="form-control"
-                      placeholder="Add some extra details?"
+                      placeholder="Specify the area of housing"
                       onChange={onChange}
                     />
                   </div>
@@ -246,19 +245,7 @@ const Contact = () => {
                   stands out and attracts more potential guests.{" "}
                 </p>
 
-                {/*                 <div className="contact-social">
-                  <h6>Socila Links</h6>
-                  <ul className="list-unstyled list-inline">
-                    {socialMediaData.map((media) => (
-                      <li
-                        key={media.id}
-                        className="list-inline-item"
-                      >
-                        <a href="#">{media.icon}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div> */}
+            
               </div>
             </div>
           </div>

@@ -27,12 +27,12 @@ const Footer = () => {
                   <p>
                   Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
                   </p>
-                  <p className="contact-number mb-0">
-                    <a href="tel:+05656565656">+46 8 410 337 80</a>
-                  </p>
+                  <div className="col">
                   <p className="contact-email mb-0">
-                    <a href="mailto:info@staticmania.com">info@staysthlm.com</a>
+                    <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
                   </p>
+                  </div>
+                  
                 </div>
 
               </div>
@@ -49,15 +49,7 @@ const Footer = () => {
                       Home
                     </Link>
                   </li>
-                  
-                  <li>
-                    <Link
-                      href="/about"
-                      className="footer-link"
-                    >
-                      About
-                    </Link>
-                  </li>
+      
                   <li>
                     <Link
                       href="/contact"
@@ -66,163 +58,10 @@ const Footer = () => {
                       Contact
                     </Link>
                   </li>
-{/*                   <li>
-                    <Link
-                      href="/search"
-                      className="footer-link"
-                    >
-                      Search
-                    </Link>
-                  </li> */}
+
                 </ul>
               </div>
             </div>
-            <div className="col-xl-2">
-              <div className="footer-widget">
-                <h5>Social Media</h5>
-        
-                <div className="footer-social">
-                  <ul className="d-block">
-                    {socialMediaData.map((media) => (
-                      <li
-                        key={media.id}
-                        className="d-block"
-                      >
-                        <Link href={media.path}>{media.icon}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                  
-                </div> </div>
-{/*             <div className="col-xl-2">
-              <div className="footer-widget">
-                <h5>Company Details</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <Link
-                      href="/property"
-                      className="footer-link"
-                    >
-                      Listing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/property/1"
-                      className="footer-link"
-                    >
-                      Property Details
-                    </Link>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div> */}
-            {/* <div className="col-xl-2">
-              <div className="footer-widget">
-                <h5>Other Pages</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <Link
-                      href="/blogs"
-                      className="footer-link"
-                    >
-                      Blogs
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blogs/10-Delightful-Dining-Room-Decor-Trends-for-Spring"
-                      className="footer-link"
-                    >
-                      Blog-single
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/privacy"
-                      className="footer-link"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/license"
-                      className="footer-link"
-                    >
-                      License
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/not-Found"
-                      className="footer-link"
-                    >
-                      404 Page
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-2">
-              <div className="footer-widget">
-                <h5>Others</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <a
-                      data-bs-toggle="modal"
-                      href="#login"
-                      role="button"
-                      className="footer-link"
-                    >
-                      Log In
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      data-bs-toggle="modal"
-                      href="#otp"
-                      role="button"
-                      className="footer-link"
-                    >
-                      Enter OTP
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      data-bs-toggle="modal"
-                      href="#newPassword"
-                      role="button"
-                      className="footer-link"
-                    >
-                      New password
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      data-bs-toggle="modal"
-                      href="#resetPassword"
-                      role="button"
-                      className="footer-link"
-                    >
-                      Reset password
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      data-bs-toggle="modal"
-                      href="#createAccount"
-                      role="button"
-                      className="footer-link"
-                    >
-                      Create Account
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div> */}
           </div>
           <div className="row">
             <div className="offset-1 col-11">
@@ -249,11 +88,9 @@ const Footer = () => {
                   <p>
                   Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
                   </p>
-                  <p className="contact-number mb-0">
-                    <Link href="tel:+05656565656">+46 8 410 337 80</Link>
-                  </p>
+                  
                   <p className="contact-email mb-0">
-                    <Link href="mailto:info@staticmania.com">info@staysthlm.se</Link>
+                    <Link href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</Link>
                   </p>
                 </div>
                 <div className="footer-social">
@@ -282,23 +119,7 @@ const Footer = () => {
                           href="/"
                           className="footer-link"
                         >
-                          Home Page 1
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/homepage2"
-                          className="footer-link"
-                        >
-                          Home Page 2
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/about"
-                          className="footer-link"
-                        >
-                          About
+                          Home Page
                         </Link>
                       </li>
                       <li>
@@ -309,159 +130,17 @@ const Footer = () => {
                           Contact
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          href="/search"
-                          className="footer-link"
-                        >
-                          Search
-                        </Link>
-                      </li>
+                  
                     </ul>
                   </div>
                 </div>
                 <div className="col">
-                  <div className="footer-widget">
-                    <h5>Company Details</h5>
-                    <ul className="list-unstyled">
-                      <li>
-                        <Link
-                          href="/property"
-                          className="footer-link"
-                        >
-                          Listing
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/property/1"
-                          className="footer-link"
-                        >
-                          Property Details
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/agent"
-                          className="footer-link"
-                        >
-                          Agent List
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/agent/1"
-                          className="footer-link"
-                        >
-                          Agent Profile
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+                  
                 </div>
                 <div className="col">
-                  <div className="footer-widget">
-                    <h5>Other Pages</h5>
-                    <ul className="list-unstyled">
-                      <li>
-                        <Link
-                          href="/blogs"
-                          className="footer-link"
-                        >
-                          Blog
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/blogs/10-Delightful-Dining-Room-Decor-Trends-for-Spring"
-                          className="footer-link"
-                        >
-                          Blog-single
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/privacy"
-                          className="footer-link"
-                        >
-                          Privacy Policy
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/license"
-                          className="footer-link"
-                        >
-                          License
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/not-found"
-                          className="footer-link"
-                        >
-                          404 Page
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+
                 </div>
                 <div className="col">
-                  <div className="footer-widget">
-                    <h5>Others</h5>
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          data-bs-toggle="modal"
-                          href="#login"
-                          role="button"
-                          className="footer-link"
-                        >
-                          Log In
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          data-bs-toggle="modal"
-                          href="#otp"
-                          role="button"
-                          className="footer-link"
-                        >
-                          Enter OTP
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          data-bs-toggle="modal"
-                          href="#newPassword"
-                          role="button"
-                          className="footer-link"
-                        >
-                          New password
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          data-bs-toggle="modal"
-                          href="#resetPassword"
-                          role="button"
-                          className="footer-link"
-                        >
-                          Reset password
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          data-bs-toggle="modal"
-                          href="#createAccount"
-                          role="button"
-                          className="footer-link"
-                        >
-                          Create Account
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
@@ -495,23 +174,7 @@ const Footer = () => {
                           href="/"
                           className="footer-link"
                         >
-                          Home Page 1
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/homepage2"
-                          className="footer-link"
-                        >
-                          Home Page 2
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/about"
-                          className="footer-link"
-                        >
-                          About
+                          Home Page
                         </Link>
                       </li>
                       <li>
@@ -522,8 +185,6 @@ const Footer = () => {
                           Contact
                         </Link>
                       </li>
-                    
-            
                     
                     </ul>
                   </div>
@@ -536,11 +197,8 @@ const Footer = () => {
                   <p>
                   Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
                   </p>
-                  <p className="contact-number mb-0">
-                    <a href="tel:+05656565656">+056 686 56 56 98</a>
-                  </p>
                   <p className="contact-email mb-0">
-                    <a href="mailto:info@staticmania.com">info@staticmania.com</a>
+                    <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
                   </p>
                 </div>
                 <div className="footer-social">

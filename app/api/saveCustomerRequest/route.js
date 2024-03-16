@@ -17,9 +17,11 @@ export const POST = async (request, response) => {
     sendEmail(subjectForAdmin, "", emailAddressForAdmin);
 
     return Response.json({
-      message: `Customer is created on ${body.creationTime} and email is sent to both recipent and admin`,
+      message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
+      Best regards,
+      Stay Plus`,
     });
   } catch (error) {
-    return Response.json({ message: "Error during processing customer request", errorDetails: error });
+    return Response.json({ message: "Form not submitted due to some problem!", errorDetails: error });
   }
 };

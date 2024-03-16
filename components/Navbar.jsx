@@ -2,10 +2,9 @@
 import { menuData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import {
-  Phone,
-  MagnifyingGlass,
   CaretDown,
   List,
   XCircle,
@@ -43,42 +42,20 @@ const Navbar = () => {
                 width={119}
               />
             </Link>
-            {/* <a href="tel:2329872 " className="navbar-number align-items-center">
-              <svg
-                width={6}
-                height={7}
-                viewBox="0 0 6 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx={3} cy="3.5" r={3} fill="#417086" />
-              </svg>
-              <Phone size={24} weight="bold" />
-              (+46) 8 410 337 - 80
-            </a> */}
+
           </div>
           <div className=" d-none d-sm-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last">
-          {/*   <ul className="list-unstyled m-0">
-              <li className="nav-item ">
-                <Link
-                  className="nav-link nav-search-link d-flex align-items-center"
-                  href="/search"
-                >
-                  <MagnifyingGlass size={20} />
-                  Search
-                </Link>
-              </li>
-            </ul> */}
-
-            <a
+            <button
               className="btn btn-small btn-outline d-none d-lg-inline-block"
-              data-bs-toggle="modal"
-              href="#login"
-              role="button"
+              type="submit"
+              id="5"
+              onClick={() => router.push("/contact")}
             >
-              Leave a Message
-            </a> 
+
+              Get in Touch
+            </button>
           </div>
+
           <button
             className="navbar-toggler collapsed"
             type="button"
@@ -188,39 +165,7 @@ const Navbar = () => {
                   </li>
                 );
               })}
-
-              <li className="nav-item d-none d-sm-inline-block d-lg-none">
-                <a
-                  className="btn btn-small btn-outline"
-                  data-bs-toggle="modal"
-                  href="#login"
-                  role="button"
-                >
-                  Log In
-                </a>
-              </li>
             </ul>
-            <div className="d-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last d-sm-none">
-              <ul className="list-unstyled m-0 search-dropdown">
-                <li className="nav-item ">
-                  <Link
-                    className="nav-link nav-search-link d-flex align-items-center"
-                    href="/search"
-                  >
-                    <MagnifyingGlass size={20} />
-                    Search
-                  </Link>
-                </li>
-              </ul>
-              <a
-                className="btn btn-small btn-outline"
-                data-bs-toggle="modal"
-                href="#login"
-                role="button"
-              >
-                Log In
-              </a>
-            </div>
           </div>
         </div>
       </nav>
