@@ -1,9 +1,9 @@
 "use client";
-import {socialMediaData} from "@/data/data";
+import { socialMediaData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {useEffect} from "react";
+import { useEffect } from "react";
 const Footer = () => {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -23,20 +23,23 @@ const Footer = () => {
                     width={119}
                   />
                 </div>
-                <div className="footer-address">
-                  <p>
-                  Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
-                  </p>
-                  <div className="col">
-                  <p className="contact-email mb-0">
-                    <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
-                  </p>
-                  </div>
-                  
-                </div>
-
+              </div>
+</div>
+              <div className="col-xl-2">
+                <div className="footer-widget">
+                  <h5>
+                    Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden
+                  </h5></div>
+             
+            </div>
+            <div className="col-xl-2">
+              <div className="footer-widget">
+                <h5> <p className="contact-email mb-0">
+                  <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
+                </p></h5>
               </div>
             </div>
+
             <div className="col-xl-2">
               <div className="footer-widget">
                 <h5>Pages</h5>
@@ -49,7 +52,7 @@ const Footer = () => {
                       Home
                     </Link>
                   </li>
-      
+
                   <li>
                     <Link
                       href="/contact"
@@ -86,9 +89,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-address">
                   <p>
-                  Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
+                    Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden
                   </p>
-                  
+
                   <p className="contact-email mb-0">
                     <Link href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</Link>
                   </p>
@@ -130,12 +133,12 @@ const Footer = () => {
                           Contact
                         </Link>
                       </li>
-                  
+
                     </ul>
                   </div>
                 </div>
                 <div className="col">
-                  
+
                 </div>
                 <div className="col">
 
@@ -185,7 +188,7 @@ const Footer = () => {
                           Contact
                         </Link>
                       </li>
-                    
+
                     </ul>
                   </div>
                 </div>
@@ -195,7 +198,7 @@ const Footer = () => {
               <div className="footer-widget">
                 <div className="footer-address">
                   <p>
-                  Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden 
+                    Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden
                   </p>
                   <p className="contact-email mb-0">
                     <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
