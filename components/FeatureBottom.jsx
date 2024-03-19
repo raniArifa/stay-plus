@@ -39,7 +39,6 @@ const FeatureBottom = () => {
           <h3>Tech Driven <br ></br> Co-Hosting</h3>
           <p>
           We leverage state-of-the-art tools and technology to deliver top-notch service and ensure your short-term rental property's success.
-‍
 Through digital tools we
 continuously monitor and optimize occupancy rates to increase property utilization and revenue. Managing last-minute changes, bookings and cancellations effectively.
           </p>

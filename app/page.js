@@ -1,7 +1,6 @@
 import Counter from "@/components/Counter";
 import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
-import Testimonial from "@/components/Testimonial";
 import TestimonialV2 from "@/components/TestimonialV2";
 import WorkArea from "@/components/WorkArea";
 

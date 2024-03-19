@@ -45,15 +45,7 @@ const Navbar = () => {
 
           </div>
           <div className=" d-none d-sm-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last">
-            <button
-              className="btn btn-small btn-outline d-none d-lg-inline-block"
-              type="submit"
-              id="5"
-              onClick={() => router.push("/contact")}
-            >
-
-              Get in Touch
-            </button>
+          <a class="btn btn-small btn-outline d-none d-lg-inline-block" href="/contact" role="button">Send Message</a>
           </div>
 
           <button

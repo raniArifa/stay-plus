@@ -63,9 +63,14 @@ const Contact = () => {
         }
       })
       .then((data) => {
-        setSuccessMessage(data.message);
-        setErrorMessage(null);
-        handleReset();
+        if (data.errorDetails) {
+          setErrorMessage(data.message);
+          setSuccessMessage(null);
+        } else {
+          setSuccessMessage(data.message);
+          setErrorMessage(null);
+          handleReset();
+        }
       })
       .catch((error) => {
         setErrorMessage(error.message);
@@ -245,7 +250,7 @@ const Contact = () => {
                   stands out and attracts more potential guests.{" "}
                 </p>
 
-            
+
               </div>
             </div>
           </div>

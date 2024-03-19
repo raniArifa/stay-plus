@@ -1,5 +1,7 @@
 import { save } from "../mongoDBOperations";
 import { sendEmail } from "../emailOperations";
+import readFileContent from "../readFile";
+import { adminEmailContent } from "../adminEmailContent";
 
 export const POST = async (request, response) => {
   try {
@@ -8,13 +10,15 @@ export const POST = async (request, response) => {
     await save(body);
     // first send to recipent
     const { emailAddress } = body;
-    const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
-    const textForCustomer = process.env.CUSTOMER_EMAIL_TEXT || "";
-    sendEmail(subjectForCustomer, textForCustomer, emailAddress);
     // Now send email to admin
     const emailAddressForAdmin = process.env.ADMIN_EMAIL_ADDRESS || "";
     const subjectForAdmin = process.env.ADMIN_EMAIL_SUBJECT || "";
-    sendEmail(subjectForAdmin, "", emailAddressForAdmin);
+    // TODO: use the html for admin. For now using the customer html to test.
+    const textForAdmin = adminEmailContent(body);
+    sendEmail(subjectForAdmin, textForAdmin, emailAddressForAdmin);
+    const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
+    const htmlForCustomer = await readFileContent("app/api/customerEmail.html");
+    sendEmail(subjectForCustomer, htmlForCustomer, emailAddress);
 
     return Response.json({
       message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
@@ -22,6 +26,9 @@ export const POST = async (request, response) => {
       Stay Plus`,
     });
   } catch (error) {
-    return Response.json({ message: "Form not submitted due to some problem!", errorDetails: error });
+    return Response.json({
+      message: "Form not submitted due to some problems!",
+      errorDetails: error,
+    });
   }
 };

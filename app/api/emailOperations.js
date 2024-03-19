@@ -1,6 +1,6 @@
 import { createTransport } from "nodemailer";
 
-export const sendEmail = async (subject, text, to) => {
+export const sendEmail = async (subject, html, to) => {
   const host = process.env.EMAIL_SMTP_HOST || "";
   const port = process.env.EMAIL_SMTP_PORT || 587;
   const user = process.env.EMAIL_USER || "";
@@ -22,7 +22,7 @@ export const sendEmail = async (subject, text, to) => {
     from: user,
     to,
     subject,
-    text,
+    html,
   };
 
   return transporter.sendMail(mailOptions, function (error, info) {
