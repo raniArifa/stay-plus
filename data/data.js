@@ -29,19 +29,17 @@ export const menuData = [
 export const counterData = [
   {
     id: 1,
-    count: 150,
-    leftIcon: "$",
+    count: 1000,
     rightIcon: "+",
     Icon: <DollarIcon />,
-    description: "Owned from <br> Properties transactions",
+    description: "Number Of <br> Properties Managed",
   },
   {
     id: 2,
-    count: 25,
-    leftIcon: "",
-    rightIcon: "K+",
+    count: 15,
+    rightIcon: "år",
     Icon: <LocationIcon />,
-    description: "Properties for Buy <br> &amp; sell Successfully",
+    description: "Years Of <br> Experience",
   },
   {
     id: 3,

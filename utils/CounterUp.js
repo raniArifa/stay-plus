@@ -31,8 +31,8 @@ const CounterUp = ({ number }) => {
   useEffect(() => {
     if (isCounting && count < number) {
       const timer = setInterval(() => {
-        setCount((prevCount) => prevCount + 2);
-      }, 1);
+        setCount((prevCount) => prevCount + 1);
+      }, 0);
 
       return () => {
         clearInterval(timer);

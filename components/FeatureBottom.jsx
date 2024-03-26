@@ -36,36 +36,35 @@ const FeatureBottom = () => {
       </div>
       <div className="col-md-6 col-lg-5 me-lg-auto ms-xl-auto order-xl-2 order-md-1">
         <div className="feature-content">
-          <h3>Tech Driven <br ></br> Co-Hosting</h3>
+          <h3>Tech Driven <br ></br> Co-Hosting With a Human Touch</h3>
           <p>
-          We leverage state-of-the-art tools and technology to deliver top-notch service and ensure your short-term rental property's success.
-Through digital tools we
-continuously monitor and optimize occupancy rates to increase property utilization and revenue. Managing last-minute changes, bookings and cancellations effectively.
+            We combine our in-house knowledge with digital tools and AI technology to deliver top-class service and ensure your short-term rental property’s success.
+            We continuously monitor your occupancy rates and optimize for availability, revenue management, and profitability. We utilize tech responsibly so that you can:
           </p>
           <ul className="">
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">More Time, Less Stress</span>
+              <span className="bold">Save Time and Stress Less</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Increased Earnings</span>
+              <span className="bold">Increase Your Earnings</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Property Growth</span>
+              <span className="bold">Grow Your Property&apos;s Potential</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Online Visibilty</span>
+              <span className="bold">Boost Your Online Visibilty</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Legal Compliance</span>
+              <span className="bold">Ensure yYou&apos;re Legally Compliant</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Market Insights</span>
+              <span className="bold">Gain Valuable Market Insights</span>
             </li>
           </ul>
           <a href="/about" className="btn btn-small">

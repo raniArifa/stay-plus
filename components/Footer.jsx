@@ -23,21 +23,25 @@ const Footer = () => {
                     width={119}
                   />
                 </div>
-              </div>
-</div>
-              <div className="col-xl-2">
-                <div className="footer-widget">
-                  <h5>
+                <div className="footer-address">
+                  <p>
                     Stay in Sweden AB<br /> Box 20011 SE-161 02<br />  Bromma, Sweden
-                  </h5></div>
-             
+                  </p></div>
+                <div className="footer-widget">
+                  <h5> <p className="contact-email mb-0">
+                    <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
+                  </p></h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4">
+              <h5> About Us</h5>
+              <p className=" ">
+                We&apos;re redefining work-and-living experiences in Stockholm. We offer relocating professionals, remote workers, and digital nomads a home away from home, and provide property owners with safe, reliable, and hassle-free income.              </p>
+
             </div>
             <div className="col-xl-2">
-              <div className="footer-widget">
-                <h5> <p className="contact-email mb-0">
-                  <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
-                </p></h5>
-              </div>
+
             </div>
 
             <div className="col-xl-2">
@@ -77,14 +81,14 @@ const Footer = () => {
       <section className="footer d-none d-sm-block d-xl-none">
         <div className="container-fluid footer-container">
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-4">
               <div className="footer-widget">
                 <div className="footer-logo">
                   <Image
-                    src="/images/logo.pmg"
+                    src="/images/logo.png"
                     alt="logo"
-                    height={35}
-                    width={129}
+                    height={45}
+                    width={119}
                   />
                 </div>
                 <div className="footer-address">
@@ -96,22 +100,19 @@ const Footer = () => {
                     <Link href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</Link>
                   </p>
                 </div>
-                <div className="footer-social">
-                  <ul className="list-unstyled list-inline">
-                    {socialMediaData.map((media) => (
-                      <li
-                        key={media.id}
-                        className="list-inline-item"
-                      >
-                        <Link href={media.path}>{media.icon}</Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div>
                   <p className="footer-copyright">Stay in Sweden AB {new Date().getFullYear()}</p>
                 </div>
               </div>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-4">
+              <h5> About Us</h5>
+              <p className=" ">
+                We give people a home away from home.We have a vision to become global leader with the aim to redefining living experiences and improve the quality of life for those working a limited time in Stockholm.
+              </p>
+            </div>
+
+            <div className="col-sm-4">
               <div className="row row-cols-2 gutter-5">
                 <div className="col">
                   <div className="footer-widget">
@@ -137,14 +138,8 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col">
 
-                </div>
-                <div className="col">
 
-                </div>
-                <div className="col">
-                </div>
               </div>
             </div>
           </div>
@@ -160,8 +155,8 @@ const Footer = () => {
                   <Image
                     src="/images/logo.png"
                     alt="logo"
-                    height={35}
-                    width={129}
+                    height={45}
+                    width={119}
                   />
                 </div>
               </div>
@@ -204,18 +199,7 @@ const Footer = () => {
                     <a href="mailto:stayplus@staysthlm.se">stayplus@staysthlm.se</a>
                   </p>
                 </div>
-                <div className="footer-social">
-                  <ul className="list-unstyled list-inline">
-                    {socialMediaData.map((media) => (
-                      <li
-                        key={media.id}
-                        className="list-inline-item"
-                      >
-                        <a href={media.path}>{media.icon}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
               </div>
             </div>
           </div>

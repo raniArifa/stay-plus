@@ -9,6 +9,8 @@ import {
   User,
   CaretDown,
   Buildings,
+  Notepad,
+  HouseLine,
 } from "phosphor-react";
 
 const Contact = () => {
@@ -24,6 +26,7 @@ const Contact = () => {
     phoneNumber: "",
     numberOfApartments: "",
     areaOfHousing: "",
+    extraInfo: "",
   });
   const handleSelect = (value) => {
     setFormValue({ ...formValue, ["typeOfHousing"]: value });
@@ -43,6 +46,7 @@ const Contact = () => {
       phoneNumber: "",
       numberOfApartments: "",
       areaOfHousing: "",
+      extraInfo: "",
     })
   }
 
@@ -90,10 +94,9 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-7 col-md-10 mx-auto">
             <div className="contact-title text-center">
-              <h1>Get In Touch</h1>
+              <h3>Maximize Your Property&apos;s Revenue</h3>
               <p>
-                Stay Plus will help you with your property today.If you are looking
-                for a short-term solution for your clients, contact our sales team to learn more sales@staysthlm.se
+                We&apos;ll help you maximize your income by optimizing for long, medium, and short-term rentals, based on real-time market demand.
               </p>
             </div>
           </div>
@@ -111,7 +114,7 @@ const Contact = () => {
                     {errorMessage}
                   </div>)
                 }
-                <h4>Send Message</h4>
+                <h4>Required Information</h4>
                 <form className="contact-form-items" onSubmit={handleSubmit}>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -129,7 +132,7 @@ const Contact = () => {
                   </div>
                   <div className="input-group">
                     <span className="input-group-text">
-                      <Buildings size={20} />
+                      <HouseLine size={20} />
                     </span>
                     <input
                       type="text"
@@ -200,7 +203,7 @@ const Contact = () => {
                   </div>
                   <div className="input-group">
                     <span className="input-group-text">
-                      <House size={20} />
+                      <Buildings size={20} />
                     </span>
                     <input
                       type="number"
@@ -221,7 +224,20 @@ const Contact = () => {
                       name="areaOfHousing"
                       value={formValue.areaOfHousing}
                       className="form-control"
-                      placeholder="Specify the area of housing"
+                      placeholder="Specify the Area of Housing"
+                      onChange={onChange}
+                    />
+                  </div>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <Notepad size={20} />
+                    </span>
+                    <input
+                      type="text"
+                      name="extraInfo"
+                      value={formValue.extraInfo}
+                      className="form-control"
+                      placeholder="Is there something specific you would like to mention?"
                       onChange={onChange}
                     />
                   </div>
@@ -233,22 +249,19 @@ const Contact = () => {
                 </form>
               </div>
               <div className="contact-form-address">
-                <h6>How this works?</h6>
+                <h6>How does it work?</h6>
                 <p>
-                  1. You contact us through this form. We get in touch with you
-                  with our plan.
-                  <br />
-                  2. We draw up a tailor-made lease agreement which benefits all
-                  parties.
-                  <br />
-                  3. We organize the administrative work with rental
-                  payments,invoices, receipts, check-lists and other documents
-                  so the rental will be as safe and smooth as possible.
-                  <br />
-                  4. We use online marketing and advertising tools to increase
-                  your property's visibility on rental platforms, ensuring it
-                  stands out and attracts more potential guests.{" "}
-                </p>
+                  <ol>
+                    <li>
+                      You contact us via this form. We get in touch with you
+                      with our plan for your property. </li>
+                    <li> You receive our proposed agreement</li>
+
+                    <li> We handle all the admin for stays so everything&apos;s safe, smooth and hassle-free for you.</li>
+
+                    <li> We use online marketing and advertising tools to increase
+                      visibility to potential guests.</li>
+                  </ol></p>
 
 
               </div>

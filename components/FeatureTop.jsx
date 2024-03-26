@@ -22,10 +22,10 @@ const FeatureTop = () => {
     >
       <div className="col-lg-6 order-lg-1 order-2">
         <div className="feature-content">
-          <h3>Why Co-Host with us?</h3>
+          <h3>Why Co-Host with Stay Plus?</h3>
           <p>
-          Professional co-hosting can be a valuable partnership for property owners, offering them support, expertise, and a pathway to increased profitability in the expanding rental market.
-Let's team up to make your property a true success story for Extra Income, Flexibility, Tourism and Hospitality Industry, Cultural Exchange, Affordability and Utilization of Empty Spaces.
+            Our professional co-hosting service helps you boost your property’s profitability in an ever-changing rental market. We offer you extensive industry expertise, end-to-end support — and hassle-free income.
+
           </p>
           <Link href="/contact" className="btn btn-small">
             Get Started

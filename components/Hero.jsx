@@ -61,29 +61,30 @@ const Hero = () => {
               animate="visible"
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="hero-content">
-                <h1 className="hero-content-title">
-                Boost your rental profits with professional<br></br>co-hosting!
+              <div className="hero-content ">
+                <h1 className="hero-content-title ">
+                Increase your income with professional co-hosting
+
                 </h1>
-                <p className="hero-content-description">
-                Are you a property or home owner looking to maximize your earnings while minimizing the hassle? Look no further! Our professional co-hosting service is the key to unlocking the full potential of your property.
+                <p className="hero-content-description ">
+                  Are you a property- or home-owner looking to maximize your income but minimize the stress? Our professional co-hosting service helps you unlock your property’s earning potential, hassle-free.
                 </p>
               </div>
-              
-              <div className="col-md-4 col-sm-6 text-md-end">
-                        <button
-                          className="btn btn-large submit-button d-flex align-items-center w-100 ms-auto justify-content-center"
-                          type="submit"
-                          id="5"
-                          onClick={() => router.push("/contact")}
-                        >                            Get in Touch
 
-                          {/* <MagnifyingGlass size={30} weight="bold" /> */}
-                          <span className="d-md-none d-inline-block">
-                          </span>
-                        </button>
-                      </div>
-    
+              <div className="col-md-4 col-sm-6 text-md-end">
+                <button
+                  className="btn btn-large submit-button d-flex align-items-center w-100 ms-auto justify-content-center"
+                  type="submit"
+                  id="5"
+                  onClick={() => router.push("/contact")}
+                >                            Contact Us
+
+                  {/* <MagnifyingGlass size={30} weight="bold" /> */}
+                  <span className="d-md-none d-inline-block">
+                  </span>
+                </button>
+              </div>
+
             </motion.div>
           </div>
         </div>
