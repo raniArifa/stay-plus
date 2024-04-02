@@ -12,8 +12,10 @@ import {
   Notepad,
   HouseLine,
 } from "phosphor-react";
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [types, setTypes] = useState(["Apartments", "Villa", "Cottage"]);
   const [review, setReview] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
@@ -90,6 +92,9 @@ const Contact = () => {
   useTitle("Contact Us | StayPlus");
   return (
     <section className="contact">
+       <div>
+      <h1>{t('hello')}</h1>
+    </div>
       <div className="container">
         <div className="row">
           <div className="col-lg-7 col-md-10 mx-auto">
