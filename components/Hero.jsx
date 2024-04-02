@@ -63,11 +63,11 @@ const Hero = () => {
             >
               <div className="hero-content ">
                 <h1 className="hero-content-title ">
-                Increase your income with professional co-hosting
+                Increase Your Income with Professional Co-hosting
 
                 </h1>
                 <p className="hero-content-description ">
-                  Are you a property- or home-owner looking to maximize your income but minimize the stress? Our professional co-hosting service helps you unlock your property’s earning potential, hassle-free.
+                  Are you a property or home-owner looking to maximize your income but minimize the stress? Our professional co-hosting service helps you unlock your property&apos;s earning potential, hassle-free.
                 </p>
               </div>
 

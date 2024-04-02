@@ -250,20 +250,17 @@ const Contact = () => {
               </div>
               <div className="contact-form-address">
                 <h6>How does it work?</h6>
-                <p>
                   <ol>
                     <li>
-                      You contact us via this form. We get in touch with you
-                      with our plan for your property. </li>
-                    <li> You receive our proposed agreement</li>
+                      <p>You contact us via this form. We get in touch with you
+                      with our plan for your property.</p> </li>
+                    <li><p>You receive our proposed agreement</p> </li>
 
-                    <li> We handle all the admin for stays so everything&apos;s safe, smooth and hassle-free for you.</li>
+                    <li><p>We handle all the admin for stays so everything&apos;s safe, smooth and hassle-free for you.</p> </li>
 
-                    <li> We use online marketing and advertising tools to increase
-                      visibility to potential guests.</li>
-                  </ol></p>
-
-
+                    <li> <p>We use online marketing and advertising tools to increase
+                      visibility to potential guests.</p></li>
+                  </ol>
               </div>
             </div>
           </div>

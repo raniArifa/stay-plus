@@ -13,16 +13,17 @@ export const POST = async (request, response) => {
     // Now send email to admin
     const emailAddressForAdmin = process.env.ADMIN_EMAIL_ADDRESS || "";
     const subjectForAdmin = process.env.ADMIN_EMAIL_SUBJECT || "";
-    // TODO: use the html for admin. For now using the customer html to test.
-    const textForAdmin = adminEmailContent(body);
-    sendEmail(subjectForAdmin, textForAdmin, emailAddressForAdmin);
+
     const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
     const htmlForCustomer = await readFileContent("app/api/customerEmail.html");
     sendEmail(subjectForCustomer, htmlForCustomer, emailAddress);
+    // TODO: use the html for admin. For now using the customer html to test.
+    const textForAdmin = adminEmailContent(body);
+    sendEmail(subjectForAdmin, textForAdmin, emailAddressForAdmin, true);
 
     return Response.json({
       message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
-      Best regards,
+      Best Regards,
       Stay Plus`,
     });
   } catch (error) {

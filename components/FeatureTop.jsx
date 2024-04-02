@@ -24,8 +24,9 @@ const FeatureTop = () => {
         <div className="feature-content">
           <h3>Why Co-Host with Stay Plus?</h3>
           <p>
-            Our professional co-hosting service helps you boost your property’s profitability in an ever-changing rental market. We offer you extensive industry expertise, end-to-end support — and hassle-free income.
+            With over 20 years of combined experience from leading online travel agencies and specialized knowledge in revenue maximization, we are your trusted partner to increase your ROI.
 
+            We also use advanced technical tools such as Revenue Management Systems and AI systems to ensure that each apartment generates maximum income. By combining our industry expertise with state-of-the-art technology, we optimize your portfolio and increase your profitability in an efficient way
           </p>
           <Link href="/contact" className="btn btn-small">
             Get Started
