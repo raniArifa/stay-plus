@@ -4,8 +4,11 @@ import Image from "next/image";
 import { CheckCircle } from "phosphor-react";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 
 const FeatureBottom = () => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -36,39 +39,43 @@ const FeatureBottom = () => {
       </div>
       <div className="col-md-6 col-lg-5 me-lg-auto ms-xl-auto order-xl-2 order-md-1">
         <div className="feature-content">
-          <h3>Tech Driven <br ></br> Co-Hosting With a Human Touch</h3>
-          <p>
-            We combine our in-house knowledge with digital tools and AI technology to deliver top-class service and ensure your short-term rental property’s success.
-            We continuously monitor your occupancy rates and optimize for availability, revenue management, and profitability. We utilize tech responsibly so that you can:
-          </p>
+          <h3>{t('feature_bottom_heading1')} <br ></br> {t('feature_bottom_heading2')}</h3>
+          <p> {t('feature_bottom_body')}</p>
           <ul className="">
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Save Time and Stress Less</span>
+              <span className="bold">{t('feature_bottom_value1')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Increase Your Earnings</span>
+              <span className="bold">{t('feature_bottom_value2')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Grow Your Property&apos;s Potential</span>
+              <span className="bold">{t('feature_bottom_value3')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Boost Your Online Visibilty</span>
+              <span className="bold">{t('feature_bottom_value4')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Ensure yYou&apos;re Legally Compliant</span>
+              <span className="bold">{t('feature_bottom_value5')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Gain Valuable Market Insights</span>
+              <span className="bold">{t('feature_bottom_value6')}
+</span>
             </li>
           </ul>
           <a href="/about" className="btn btn-small">
-            Learn More
+          {t('learn_more')}
+
           </a>
         </div>
       </div>

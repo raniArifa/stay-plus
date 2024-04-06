@@ -4,8 +4,11 @@ import Link from "next/link";
 import useAnimation from "@/hooks/useAnimation";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 
 const FeatureTop = () => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -22,14 +25,10 @@ const FeatureTop = () => {
     >
       <div className="col-lg-6 order-lg-1 order-2">
         <div className="feature-content">
-          <h3>Why Co-Host with Stay Plus?</h3>
-          <p>
-            With over 20 years of combined experience from leading online travel agencies and specialized knowledge in revenue maximization, we are your trusted partner to increase your ROI.
-
-            We also use advanced technical tools such as Revenue Management Systems and AI systems to ensure that each apartment generates maximum income. By combining our industry expertise with state-of-the-art technology, we optimize your portfolio and increase your profitability in an efficient way
-          </p>
+          <h3>{t('feature_top_heading')}</h3>
+          <p>{t('feature_top_body')} </p>
           <Link href="/contact" className="btn btn-small">
-            Get Started
+          {t('contact_us')}
           </Link>
         </div>
       </div>

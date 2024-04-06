@@ -1,3 +1,4 @@
+
 import {
   DollarIcon,
   EmojiIcon,
@@ -60,7 +61,7 @@ export const counterData = [
 ];
 // TESTIMONIAL DATA
 
-export const testimonialData = [
+/*export const testimonialData = [
   {
     id: 1,
     review:
@@ -91,7 +92,7 @@ export const testimonialData = [
       position: "Alfa - The Scandinavian Mobility Services Company",
     },
   },
-];
+]; */
 
 
 

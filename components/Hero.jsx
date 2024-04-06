@@ -3,9 +3,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 
 const Hero = () => {
+  const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
   const [city, setCity] = useState(false);
@@ -63,11 +65,11 @@ const Hero = () => {
             >
               <div className="hero-content ">
                 <h1 className="hero-content-title ">
-                Increase Your Income with Professional Co-hosting
+                {t('main_page_heading')}
 
                 </h1>
                 <p className="hero-content-description ">
-                  Are you a property or home-owner looking to maximize your income but minimize the stress? Our professional co-hosting service helps you unlock your property&apos;s earning potential, hassle-free.
+                  {t('main_page_body')}
                 </p>
               </div>
 
@@ -75,9 +77,9 @@ const Hero = () => {
                 <button
                   className="btn btn-large submit-button d-flex align-items-center w-100 ms-auto justify-content-center"
                   type="submit"
-                  id="5"
+                  id="2"
                   onClick={() => router.push("/contact")}
-                >                            Contact Us
+                >                            {t('contact_us')}
 
                   {/* <MagnifyingGlass size={30} weight="bold" /> */}
                   <span className="d-md-none d-inline-block">

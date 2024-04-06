@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -35,25 +38,22 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-xl-4">
-              <h5> About Us</h5>
-              <p className=" ">
-                We&apos;re redefining work-and-living experiences in Stockholm. We offer relocating professionals, remote workers, and digital nomads a home away from home, and provide property owners with safe, reliable, and hassle-free income.              </p>
-
-            </div>
+              <h5> {t('about_us_heading')}</h5>
+              <p className=" ">{t('about_us_body')}</p></div>
             <div className="col-xl-2">
 
             </div>
 
             <div className="col-xl-2">
               <div className="footer-widget">
-                <h5>Pages</h5>
+                <h5>{t('pages')}</h5>
                 <ul className="list-unstyled">
                   <li>
                     <Link
                       href="/"
                       className="footer-link"
                     >
-                      Home
+                      {t('home')}
                     </Link>
                   </li>
 
@@ -62,7 +62,7 @@ const Footer = () => {
                       href="/contact"
                       className="footer-link"
                     >
-                      Contact
+                      {t('contact')}
                     </Link>
                   </li>
 

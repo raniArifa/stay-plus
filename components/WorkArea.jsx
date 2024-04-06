@@ -4,7 +4,10 @@ import useAnimation from "@/hooks/useAnimation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+
 const WorkArea = () => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -23,13 +26,13 @@ const WorkArea = () => {
         <div className="row g-3">
           <div className="col-xl-6 col-lg-5">
             <div className="work-area--card">
-              <h3>Your Property&apos;s in Safe Hands</h3>
-              <p>Stay Stockholm and Stay Plus have over 15 years of experience in the Swedish rental market. We provide tailored long, medium, and short-term housing solutions to professionals who are temporarily working in Stockholm.</p>
+              <h3>{t('work_area_heading')}</h3>
+              <p>{t('work_area_body')}</p>
               <Link
                 href="/contact"
                 className="btn btn-small"
               >
-                Get Started
+                {t('get_started')}
               </Link>
             </div>
           </div>
@@ -38,26 +41,25 @@ const WorkArea = () => {
               <div className="work-area--service--items order-2 order-md-1">
                 <ChartLineUp />
                 <h4>
-                  Maximize your property&apos;s
-                  <br /> profitability
+                {t('value_1')}
                 </h4>
               </div>
               <div className="work-area--service--items order-1 order-md-2">
                 <EnjoyIcon />
                 <h4>
-                  Enjoy Hassle <br /> Free Income
+                {t('value_2')}
                 </h4>
               </div>
               <div className="work-area--service--items order-4 order-md-3">
                 <GetIcon />
                 <h4>
-                  Reliable And <br /> Legally Compliant
+                {t('value_3')}
                 </h4>
               </div>
               <div className="work-area--service--items order-3 order-md-4">
                 <VisitIcon />
                 <h4>
-                  15 Years of <br /> Industry Experience
+                {t('value_4')}
                 </h4>
               </div>
             </div>

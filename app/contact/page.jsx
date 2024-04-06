@@ -12,7 +12,7 @@ import {
   Notepad,
   HouseLine,
 } from "phosphor-react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -49,8 +49,8 @@ const Contact = () => {
       numberOfApartments: "",
       areaOfHousing: "",
       extraInfo: "",
-    })
-  }
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -92,17 +92,13 @@ const Contact = () => {
   useTitle("Contact Us | StayPlus");
   return (
     <section className="contact">
-       <div>
-      <h1>{t('hello')}</h1>
-    </div>
       <div className="container">
         <div className="row">
           <div className="col-lg-7 col-md-10 mx-auto">
             <div className="contact-title text-center">
-              <h3>Maximize Your Property&apos;s Revenue</h3>
-              <p>
-                We&apos;ll help you maximize your income by optimizing for long, medium, and short-term rentals, based on real-time market demand.
-              </p>
+              {/* //Maximize Your Property's Revenue */}
+              <h3>{t("maximize")}</h3>
+              <p>{t("contactFormHeader")}</p>
             </div>
           </div>
         </div>
@@ -110,16 +106,17 @@ const Contact = () => {
           <div className="col-12">
             <div className="contact-form">
               <div className="contact-form-layout">
-                {successMessage && (<div className="alert alert-success" role="alert">
-                  {successMessage}
-                </div>)
-                }
+                {successMessage && (
+                  <div className="alert alert-success" role="alert">
+                    {successMessage}
+                  </div>
+                )}
                 {errorMessage && (
                   <div className="alert alert-danger" role="alert">
                     {errorMessage}
-                  </div>)
-                }
-                <h4>Required Information</h4>
+                  </div>
+                )}
+                <h4>{t('form_name')}</h4>
                 <form className="contact-form-items" onSubmit={handleSubmit}>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -130,7 +127,7 @@ const Contact = () => {
                       name="fullName"
                       value={formValue.fullName}
                       className="form-control"
-                      placeholder="Your Full Name"
+                      placeholder={t('full_name')}
                       onChange={onChange}
                       required
                     />
@@ -144,7 +141,7 @@ const Contact = () => {
                       name="companyName"
                       value={formValue.companyName}
                       className="form-control"
-                      placeholder="Company Name"
+                      placeholder={t('company_name')}
                       onChange={onChange}
                     />
                   </div>
@@ -157,7 +154,7 @@ const Contact = () => {
                       name="emailAddress"
                       value={formValue.emailAddress}
                       className="form-control"
-                      placeholder="Email Address"
+                      placeholder={t('email_address')}
                       onChange={onChange}
                       required
                     />
@@ -171,7 +168,7 @@ const Contact = () => {
                       name="phoneNumber"
                       value={formValue.phoneNumber}
                       className="form-control"
-                      placeholder="Phone Number"
+                      placeholder={t('phone_number')}
                       onChange={onChange}
                       required
                     />
@@ -215,7 +212,7 @@ const Contact = () => {
                       name="numberOfApartments"
                       value={formValue.numberOfApartments}
                       className="form-control"
-                      placeholder="No. of Apartments"
+                      placeholder={t('apartments')}
                       onChange={onChange}
                       required
                     />
@@ -229,7 +226,7 @@ const Contact = () => {
                       name="areaOfHousing"
                       value={formValue.areaOfHousing}
                       className="form-control"
-                      placeholder="Specify the Area of Housing"
+                      placeholder={t('area_of_housing')}
                       onChange={onChange}
                     />
                   </div>
@@ -242,30 +239,33 @@ const Contact = () => {
                       name="extraInfo"
                       value={formValue.extraInfo}
                       className="form-control"
-                      placeholder="Is there something specific you would like to mention?"
+                      placeholder={t('more_info')}
                       onChange={onChange}
                     />
                   </div>
                   <div className="w-100 contact-form-button">
                     <button type="submit" className="btn btn-large">
-                      Send Message
+                      {t('send_message')}
                     </button>
                   </div>
                 </form>
               </div>
               <div className="contact-form-address">
-                <h6>How does it work?</h6>
-                  <ol>
-                    <li>
-                      <p>You contact us via this form. We get in touch with you
-                      with our plan for your property.</p> </li>
-                    <li><p>You receive our proposed agreement</p> </li>
-
-                    <li><p>We handle all the admin for stays so everything&apos;s safe, smooth and hassle-free for you.</p> </li>
-
-                    <li> <p>We use online marketing and advertising tools to increase
-                      visibility to potential guests.</p></li>
-                  </ol>
+                <h6>{t('how')}</h6>
+                <ol>
+                  <li>
+                    <p>{t("line1")}</p>
+                  </li>
+                  <li>
+                    <p>{t("line2")}</p>
+                  </li>
+                  <li>
+                    <p>{t("line3")}</p>
+                  </li>
+                  <li>
+                    <p>{t("line4")}</p>
+                  </li>
+                </ol>
               </div>
             </div>
           </div>

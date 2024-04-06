@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/scss/theme.scss";
-import LanguageSwitcher from './LanguageSwitcher';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../i18n';
 
@@ -19,12 +18,12 @@ const manrope = Manrope({
 export default function RootLayout({children}) {
   return (
     <I18nextProvider i18n={i18n}>
-    <html lang="en">
+    <html lang="sv">
       <body
         suppressHydrationWarning={true}
         className={manrope.className}
       >
-        <LanguageSwitcher />
+  
         <Navbar />
         <main>{children}</main>
         <Footer />

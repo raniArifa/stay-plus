@@ -13,8 +13,8 @@ i18n
       en: { translation: enTranslations },
       sv: { translation: svTranslations },
     },
-    lng: 'en', // Default language
-    fallbackLng: 'en',
+    lng: 'sv', // Default language
+    fallbackLng: 'sv',
     interpolation: {
       escapeValue: false, // React already sanitizes output
     },
