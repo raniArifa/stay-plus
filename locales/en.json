@@ -1,4 +1,7 @@
 {
+  "en": "English",
+  "sv": "Swedish",
+  "contact_title": "Contact Us | StayPlus",
   "maximize": "Maximize Your Property's Revenue",
   "contactFormHeader": "We'll help you maximize your income by optimizing for long, medium, and short-term rentals, based on real-time market demand.",
   "line1": "You contact us via this form. We get in touch with you with our plan for your property.",
@@ -10,7 +13,7 @@
   "company_name": "Company Name",
   "email_address": "Email Address",
   "phone_number": "Phone Number",
-  "apartments": "No. of Apartments",
+  "no_of_apartments": "No. of Apartments",
   "area_of_housing": "Specify the Area of Housing",
   "more_info":"Is there something specific you would like to mention?",
   "send_message":"Send Message",
@@ -41,5 +44,15 @@
   "about_us_body":"We're redefining work-and-living experiences in Stockholm. We offer relocating professionals, remote workers, and digital nomads a home away from home, and provide property owners with safe, reliable, and hassle-free income.",
   "pages":"Pages",
   "home":"Home",
-  "contact":"Contact"
+  "contact":"Contact",
+  "apartments": "Apartment",
+  "villa": "Villa",
+  "cottage": "Cottage",
+  "menu": "Menu",
+  "close": "Close",
+  "year": "yrs",
+  "number_of_properties_managed": "Number Of <br> Properties Managed",
+  "years_of_experience": "Years Of <br> Experience",
+  "daily_completed_transactions": "Daily completed <br> transactions",
+  "regular_clients": "Regular Clients"
 }

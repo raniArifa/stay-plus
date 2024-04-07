@@ -23,7 +23,6 @@ export default function RootLayout({children}) {
         suppressHydrationWarning={true}
         className={manrope.className}
       >
-  
         <Navbar />
         <main>{children}</main>
         <Footer />

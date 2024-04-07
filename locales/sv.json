@@ -1,4 +1,7 @@
 {
+  "en": "engelska",
+  "sv": "svenska",
+  "contact_title": "Kontakta oss | StayPlus",
   "maximize": "Maximera din fastighets intäkt",
   "contactFormHeader": "Vi hjälper dig att maximera din inkomst genom att optimera för lång-, mellan- och korttidsuthyrning baserat på realtidsmarknadens efterfrågan.",
   "line1": "Du kontaktar oss genom detta formulär. Vi återkopplar till dig med vår plan för din egendom.",
@@ -10,7 +13,7 @@
   "company_name": "Företagsnamn",
   "email_address": "E-postadress",
   "phone_number": "Telefonnummer",
-  "apartments": "Antal lägenheter",
+  "no_of_apartments": "Antal lägenheter",
   "area_of_housing": "Specificera området för boendet",
   "more_info":"Finns det något specifikt du skulle vilja nämna?",
   "send_message":"Skicka meddelande",
@@ -41,5 +44,15 @@
   "about_us_body":"Vi omdefinierar arbets- och boendeupplevelser i Stockholm. Vi erbjuder yrkesverksamma som flyttar, distansarbetare och digitala nomader ett hem hemifrån och tillhandahåller fastighetsägare en säker, pålitlig och bekymmersfri inkomstkälla.",
   "pages":"Sidor",
   "home":"Hem",
-  "contact":"Kontact"
+  "contact":"Kontact",
+  "apartments": "Lägenhet",
+  "villa": "Villa",
+  "cottage": "Stuga",
+  "menu": "Meny",
+  "close": "Stänga",
+  "year": "år",
+  "number_of_properties_managed": "Antal <br> Fastigheter förvaltas",
+  "years_of_experience": "År av <br> erfarenhet",
+  "daily_completed_transactions": "Dagliga genomförda <br> transaktioners",
+  "regular_clients": "Vanliga kunder"
 }

@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [types, setTypes] = useState(["Apartments", "Villa", "Cottage"]);
+  const [types, setTypes] = useState(["apartments", "villa", "cottage"]);
   const [review, setReview] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -24,7 +24,7 @@ const Contact = () => {
     fullName: "",
     companyName: "",
     emailAddress: "",
-    typeOfHousing: "Apartments",
+    typeOfHousing: "apartments",
     phoneNumber: "",
     numberOfApartments: "",
     areaOfHousing: "",
@@ -89,7 +89,7 @@ const Contact = () => {
     resetForm();
   };
 
-  useTitle("Contact Us | StayPlus");
+  useTitle(t("contact_title"));
   return (
     <section className="contact">
       <div className="container">
@@ -116,7 +116,7 @@ const Contact = () => {
                     {errorMessage}
                   </div>
                 )}
-                <h4>{t('form_name')}</h4>
+                <h4>{t("form_name")}</h4>
                 <form className="contact-form-items" onSubmit={handleSubmit}>
                   <div className="input-group">
                     <span className="input-group-text">
@@ -127,7 +127,7 @@ const Contact = () => {
                       name="fullName"
                       value={formValue.fullName}
                       className="form-control"
-                      placeholder={t('full_name')}
+                      placeholder={t("full_name")}
                       onChange={onChange}
                       required
                     />
@@ -141,7 +141,7 @@ const Contact = () => {
                       name="companyName"
                       value={formValue.companyName}
                       className="form-control"
-                      placeholder={t('company_name')}
+                      placeholder={t("company_name")}
                       onChange={onChange}
                     />
                   </div>
@@ -154,7 +154,7 @@ const Contact = () => {
                       name="emailAddress"
                       value={formValue.emailAddress}
                       className="form-control"
-                      placeholder={t('email_address')}
+                      placeholder={t("email_address")}
                       onChange={onChange}
                       required
                     />
@@ -168,7 +168,7 @@ const Contact = () => {
                       name="phoneNumber"
                       value={formValue.phoneNumber}
                       className="form-control"
-                      placeholder={t('phone_number')}
+                      placeholder={t("phone_number")}
                       onChange={onChange}
                       required
                     />
@@ -178,8 +178,9 @@ const Contact = () => {
                       <div className="dropholder">
                         <div
                           onClick={() => setReview(!review)}
-                          className={`customdropdown d-flex justify-content-between align-items-center  ${review ? "active" : ""
-                            }`}
+                          className={`customdropdown d-flex justify-content-between align-items-center  ${
+                            review ? "active" : ""
+                          }`}
                         >
                           <p className="btn btn-large btn-outline">
                             <span className="float-left housing-dropdown">
@@ -187,7 +188,7 @@ const Contact = () => {
                             </span>
                             {formValue.typeOfHousing && (
                               <span className="float-left type-of-housing">
-                                {formValue.typeOfHousing}
+                                {t(formValue.typeOfHousing)}
                               </span>
                             )}
                             <CaretDown size={20} className="float-right" />
@@ -196,7 +197,7 @@ const Contact = () => {
                         <ul className="dropdownMenu">
                           {types.map((item) => (
                             <li key={item} onClick={() => handleSelect(item)}>
-                              {item}
+                              {t(item)}
                             </li>
                           ))}
                         </ul>
@@ -212,7 +213,7 @@ const Contact = () => {
                       name="numberOfApartments"
                       value={formValue.numberOfApartments}
                       className="form-control"
-                      placeholder={t('apartments')}
+                      placeholder={t("no_of_apartments")}
                       onChange={onChange}
                       required
                     />
@@ -226,7 +227,7 @@ const Contact = () => {
                       name="areaOfHousing"
                       value={formValue.areaOfHousing}
                       className="form-control"
-                      placeholder={t('area_of_housing')}
+                      placeholder={t("area_of_housing")}
                       onChange={onChange}
                     />
                   </div>
@@ -239,19 +240,19 @@ const Contact = () => {
                       name="extraInfo"
                       value={formValue.extraInfo}
                       className="form-control"
-                      placeholder={t('more_info')}
+                      placeholder={t("more_info")}
                       onChange={onChange}
                     />
                   </div>
                   <div className="w-100 contact-form-button">
                     <button type="submit" className="btn btn-large">
-                      {t('send_message')}
+                      {t("send_message")}
                     </button>
                   </div>
                 </form>
               </div>
               <div className="contact-form-address">
-                <h6>{t('how')}</h6>
+                <h6>{t("how")}</h6>
                 <ol>
                   <li>
                     <p>{t("line1")}</p>

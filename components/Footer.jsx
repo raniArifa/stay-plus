@@ -1,8 +1,6 @@
 "use client";
-import { socialMediaData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 const Footer = () => {

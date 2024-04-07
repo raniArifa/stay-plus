@@ -15,13 +15,13 @@ import {
 export const menuData = [
   {
     id: 1,
-    parent: "Home",
+    parent: "home",
     link: "/",
   },
 
   {
-    id: 5,
-    parent: "Contact",
+    id: 2,
+    parent: "contact",
     link: "/contact",
   },
 ];
@@ -33,14 +33,14 @@ export const counterData = [
     count: 1000,
     rightIcon: "+",
     Icon: <DollarIcon />,
-    description: "Number Of <br> Properties Managed",
+    description: "number_of_properties_managed",
   },
   {
     id: 2,
     count: 15,
-    rightIcon: "år",
+    rightIcon: "year",
     Icon: <LocationIcon />,
-    description: "Years Of <br> Experience",
+    description: "years_of_experience",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ export const counterData = [
     leftIcon: "",
     rightIcon: "",
     Icon: <FireIcon />,
-    description: "Daily completed <br> transactions",
+    description: "daily_completed_transactions",
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ export const counterData = [
     leftIcon: "$",
     rightIcon: "+",
     Icon: <EmojiIcon />,
-    description: "Regular Clients",
+    description: "regular_clients",
   },
 ];
 // TESTIMONIAL DATA
