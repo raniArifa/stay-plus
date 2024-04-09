@@ -4,8 +4,10 @@ import useAnimation from "@/hooks/useAnimation";
 import CounterUp from "@/utils/CounterUp";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Counter = ({ className }) => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -27,6 +29,7 @@ const Counter = ({ className }) => {
               {counterData.map((item) => {
                 const { id, description, Icon, leftIcon, count, rightIcon } =
                   item;
+                  const translatedDescription = t(description);
                 return (
                   <div key={id} className="counter--content">
                     <div className="counter--content-icon">{Icon}</div>
@@ -34,11 +37,11 @@ const Counter = ({ className }) => {
                       <h2>
                         {leftIcon && leftIcon}
                         <CounterUp number={count} />
-                        {rightIcon && rightIcon}
+                        {t(rightIcon) && t(rightIcon)}
                       </h2>
                     </div>
                     <p
-                      dangerouslySetInnerHTML={{ __html: description }}
+                      dangerouslySetInnerHTML={{ __html: translatedDescription }}
                       className="bold"
                     ></p>
                   </div>

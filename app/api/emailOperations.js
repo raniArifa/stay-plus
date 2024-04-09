@@ -1,31 +1,37 @@
 import { createTransport } from "nodemailer";
 
-function sendEmail(subject, text, to) {
-  const service = process.env.EMAIL_SERVICE || ""
-  const user = process.env.EMAIL_USER || ""
-  const pass = process.env.EMAIL_PASSWORD || ""
+export const sendEmail = async (subject, html, toEmailAddress) => {
+  const host = process.env.EMAIL_SMTP_HOST || "";
+  const port = process.env.EMAIL_SMTP_PORT || 587;
+  const user = process.env.SENDER_EMAIL_USER_TO_CUSTOMER;
+  const pass = process.env.SENDER_EMAIL_PASSWORD_TO_CUSTOMER;
   const transporter = createTransport({
-    service,
+    host,
+    port,
+    secure: false,
     auth: {
       user,
       pass,
     },
+    tls: {
+      rejectUnauthorized: false
+    },
+    logger: true,
+    debug: true,
   });
 
   const mailOptions = {
     from: user,
-    to,
+    toEmailAddress,
     subject,
-    text,
+    html,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
+  return transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      return error;
     } else {
-      console.log("Email sent: " + info.response);
+      return info.response;
     }
   });
-}
-
-export default sendEmail;
+};

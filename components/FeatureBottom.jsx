@@ -4,8 +4,11 @@ import Image from "next/image";
 import { CheckCircle } from "phosphor-react";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 
 const FeatureBottom = () => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -25,7 +28,7 @@ const FeatureBottom = () => {
           <Image
             height={589}
             width={537}
-            src="/images/feature/feature5.png"
+            src="/images/feature/feature5.jpg"
             alt="feature5"
             style={{
               maxWidth: "100%",
@@ -36,27 +39,43 @@ const FeatureBottom = () => {
       </div>
       <div className="col-md-6 col-lg-5 me-lg-auto ms-xl-auto order-xl-2 order-md-1">
         <div className="feature-content">
-          <h3>Secure payment system</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. In a free hour, when our power of choice is untrammelled.
-          </p>
+          <h3>{t('feature_bottom_heading1')} <br ></br> {t('feature_bottom_heading2')}</h3>
+          <p> {t('feature_bottom_body')}</p>
           <ul className="">
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Find excellent deals</span>
+              <span className="bold">{t('feature_bottom_value1')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Friendly host &amp; Fast support</span>
+              <span className="bold">{t('feature_bottom_value2')}
+</span>
             </li>
             <li>
               <CheckCircle size={20} weight="bold" />
-              <span className="bold">Secure payment system</span>
+              <span className="bold">{t('feature_bottom_value3')}
+</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">{t('feature_bottom_value4')}
+</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">{t('feature_bottom_value5')}
+</span>
+            </li>
+            <li>
+              <CheckCircle size={20} weight="bold" />
+              <span className="bold">{t('feature_bottom_value6')}
+</span>
             </li>
           </ul>
           <a href="/about" className="btn btn-small">
-            Learn More
+          {t('learn_more')}
+
           </a>
         </div>
       </div>

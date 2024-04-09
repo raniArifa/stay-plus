@@ -2,16 +2,19 @@
 import { menuData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import {
-  Phone,
-  MagnifyingGlass,
-  CaretDown,
-  List,
-  XCircle,
-} from "phosphor-react";
+import { CaretDown, Globe, List, XCircle } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const windscroll = window.scrollY;
@@ -43,42 +46,52 @@ const Navbar = () => {
                 width={119}
               />
             </Link>
-            <a href="tel:2329872 " className="navbar-number align-items-center">
-              <svg
-                width={6}
-                height={7}
-                viewBox="0 0 6 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx={3} cy="3.5" r={3} fill="#417086" />
-              </svg>
-              <Phone size={24} weight="bold" />
-              (+46) 8 410 337 - 80
-            </a>
           </div>
-          <div className=" d-none d-sm-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last">
-          {/*   <ul className="list-unstyled m-0">
-              <li className="nav-item ">
-                <Link
-                  className="nav-link nav-search-link d-flex align-items-center"
-                  href="/search"
-                >
-                  <MagnifyingGlass size={20} />
-                  Search
-                </Link>
-              </li>
-            </ul> */}
-{/* 
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-none d-sm-flex align-items-center ms-auto ms-lg-0 order-lg-last">
             <a
-              className="btn btn-small btn-outline d-none d-lg-inline-block"
-              data-bs-toggle="modal"
-              href="#login"
+              class="btn btn-outline btn-small d-none d-lg-inline-block"
+              href="/contact"
               role="button"
             >
-              Log In
-            </a> */}
-          </div>
+              {t("send_message")}
+            </a>
+          </ul>
+      
+          <div className="d-sm-flex dropdown ms-auto ms-lg-0 order-lg-last">
+              <a
+                className="dropdown-item dropdown-toggle btn-primary"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <Globe />
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => changeLanguage("en")}
+                  >
+                    {t("en")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => {
+                      changeLanguage("sv");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {t("sv")}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Navbar Collapsed  */}
+
           <button
             className="navbar-toggler collapsed"
             type="button"
@@ -87,18 +100,22 @@ const Navbar = () => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="open">
               <List size={28} color="#1C4456" className="me-1" />
-              Menu
+              {t("menu")}
             </span>
             <span className="close">
               <XCircle size={28} color="#1C4456" className="me-1" />
-              Close
+              {t("close")}
             </span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {menuData.map((item) => {
                 return (
@@ -116,7 +133,7 @@ const Navbar = () => {
                         href={item.link}
                         data-bs-toggle={item.children ? "dropdown" : ""}
                       >
-                        {item.parent}
+                        {t(item.parent)}
                       </Link>
                     ) : (
                       <a
@@ -128,7 +145,7 @@ const Navbar = () => {
                         href="#"
                         data-bs-toggle={item.children ? "dropdown" : ""}
                       >
-                        {item.parent}
+                        {t(item.parent)}
                         <CaretDown size={16} />
                       </a>
                     )}
@@ -138,7 +155,7 @@ const Navbar = () => {
                         {item.children.map((child) => (
                           <li key={child.id}>
                             <Link className="dropdown-item" href={child.link}>
-                              {child.parent}
+                              {t(child.parent)}
                             </Link>
                           </li>
                         ))}
@@ -155,20 +172,20 @@ const Navbar = () => {
                                   href={child.link}
                                   className="dropdown-item"
                                 >
-                                  {child.parent}
+                                  {t(child.parent)}
                                 </Link>
                               </li>
                             ))}
                           </ul>
                           <ul className="list-unstyled">
-                            {item.children.slice(5).map((child) => (
+                            {item.children.slice(2).map((child) => (
                               <li key={child.id}>
                                 {child.link === "/notFound" ? (
                                   <Link
                                     href={child.link}
                                     className="dropdown-item"
                                   >
-                                    {child.parent}
+                                    {t(child.parent)}
                                   </Link>
                                 ) : (
                                   <Link
@@ -176,7 +193,7 @@ const Navbar = () => {
                                     data-bs-toggle="modal"
                                     className="dropdown-item"
                                   >
-                                    {child.parent}
+                                    {t(child.parent)}
                                   </Link>
                                 )}
                               </li>
@@ -188,39 +205,8 @@ const Navbar = () => {
                   </li>
                 );
               })}
-
-              <li className="nav-item d-none d-sm-inline-block d-lg-none">
-                <a
-                  className="btn btn-small btn-outline"
-                  data-bs-toggle="modal"
-                  href="#login"
-                  role="button"
-                >
-                  Log In
-                </a>
-              </li>
             </ul>
-            <div className="d-flex navbar-search align-items-center ms-auto ms-lg-0 order-lg-last d-sm-none">
-              <ul className="list-unstyled m-0 search-dropdown">
-                <li className="nav-item ">
-                  <Link
-                    className="nav-link nav-search-link d-flex align-items-center"
-                    href="/search"
-                  >
-                    <MagnifyingGlass size={20} />
-                    Search
-                  </Link>
-                </li>
-              </ul>
-              <a
-                className="btn btn-small btn-outline"
-                data-bs-toggle="modal"
-                href="#login"
-                role="button"
-              >
-                Log In
-              </a>
-            </div>
+
           </div>
         </div>
       </nav>

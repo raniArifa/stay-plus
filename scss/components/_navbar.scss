@@ -76,6 +76,10 @@
           margin-top: $base-margin * 12.5;
           margin-bottom: $base-margin * 2.5;
         }
+        @include media-breakpoint-down-sm {
+          margin-top: $base-margin * 0.5;
+          margin-bottom: $base-margin * 1.5;
+        }
       }
     }
     .nav-link {

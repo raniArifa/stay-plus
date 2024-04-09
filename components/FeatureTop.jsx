@@ -4,8 +4,11 @@ import Link from "next/link";
 import useAnimation from "@/hooks/useAnimation";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 
 const FeatureTop = () => {
+  const { t } = useTranslation();
   const ref = useRef();
   const animation = useAnimation(ref);
   return (
@@ -22,15 +25,10 @@ const FeatureTop = () => {
     >
       <div className="col-lg-6 order-lg-1 order-2">
         <div className="feature-content">
-          <h3>Stay Plus is the long term solution for a short term stay</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. In a free hour, when our power of choice is untrammelled
-            and when nothing prevents our being able to do what we like best,
-            every pleasure is to be welcomed.
-          </p>
+          <h3>{t('feature_top_heading')}</h3>
+          <p>{t('feature_top_body')} </p>
           <Link href="/contact" className="btn btn-small">
-            Get Started
+          {t('contact_us')}
           </Link>
         </div>
       </div>
@@ -39,7 +37,7 @@ const FeatureTop = () => {
           <div className="col-6 ">
             <div className="feature-grid-image">
               <Image
-                src="/images/feature/feature1.png"
+                src="/images/feature/feature1.jpg"
                 height={327}
                 width={284}
                 alt="feature1"
@@ -51,7 +49,7 @@ const FeatureTop = () => {
               <Image
                 height={218}
                 width={284}
-                src="/images/feature/feature2.png"
+                src="/images/feature/feature2.jpg"
                 alt="feature2"
                 style={{
                   maxWidth: "100%",
@@ -65,7 +63,7 @@ const FeatureTop = () => {
               <Image
                 height={218}
                 width={284}
-                src="/images/feature/feature3.png"
+                src="/images/feature/feature3.jpg"
                 alt="feature3"
                 style={{
                   maxWidth: "100%",
@@ -75,7 +73,7 @@ const FeatureTop = () => {
               <Image
                 height={327}
                 width={284}
-                src="/images/feature/feature4.png"
+                src="/images/feature/feature4.jpg"
                 alt="feature4"
                 style={{
                   maxWidth: "100%",
