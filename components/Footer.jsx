@@ -125,16 +125,16 @@ const Footer = () => {
               <div className="row row-cols-2 gutter-5">
                 <div className="col">
                   <div className="footer-widget">
-                    <h5>Pages</h5>
+                    <h5>{t("pages")}</h5>
                     <ul className="list-unstyled">
                       <li>
                         <Link href="/" className="footer-link">
-                          Home Page
+                          {t("home")}
                         </Link>
                       </li>
                       <li>
                         <Link href="/contact" className="footer-link">
-                          Contact
+                          {t("contact")}
                         </Link>
                       </li>
                     </ul>
@@ -147,9 +147,8 @@ const Footer = () => {
       </section>
       {/*For Mobile */}
       <section className="footer d-block d-sm-none ">
-        <div className="container-fluid footer-container">
-          <div className="row gutter-5">
-            <div className="col-12">
+        
+            <div className="col-sm-6">
               <div className="footer-widget">
                 <div className="footer-logo">
                   <Image
@@ -160,30 +159,27 @@ const Footer = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div className="col-12">
-              <div className="row row-cols-2 gutter-5">
-                <div className="col">
-                  <div className="footer-widget">
-                    <h5>Pages </h5>
-                    <ul className="list-unstyled">
-                      <li>
-                        <Link href="/" className="footer-link">
-                          Home Page
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/contact" className="footer-link">
-                          Contact
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="footer-widget">
+                  <h5>{t("pages")}</h5>
+                  <ul className="list-unstyled">
+                    <li>
+                      <Link href="/" className="footer-link">
+                        {t("home")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="footer-link">
+                        {t("contact")}
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
+      
+
             <div className="col-12">
-              <div className="footer-widget">
                 <div className="footer-address">
                   <p>
                     Stay in Sweden AB
@@ -196,11 +192,8 @@ const Footer = () => {
                     </a>
                   </p>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <p className="footer-copyright">
+                <p className="footer-copyright">
           Stay in Sweden AB {new Date().getFullYear()}
         </p>
       </section>

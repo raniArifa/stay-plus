@@ -3,12 +3,12 @@ import { menuData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
 import { CaretDown, Globe, List, XCircle } from "phosphor-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { t } = useTranslation();
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -47,40 +47,7 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <div className="d-none d-sm-flex align-items-center ms-auto ms-lg-0 order-lg-last">
-            <ul className="list-unstyled m-0">
-              <li className="nav-item ">
-                <div className="dropdown">
-                  <a
-                    className="dropdown-item dropdown-toggle btn-primary"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <Globe />
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => changeLanguage("en")}
-                      >
-                        {t("en")}
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => changeLanguage("sv")}
-                      >
-                        {t("sv")}
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-none d-sm-flex align-items-center ms-auto ms-lg-0 order-lg-last">
             <a
               class="btn btn-outline btn-small d-none d-lg-inline-block"
               href="/contact"
@@ -88,7 +55,43 @@ const Navbar = () => {
             >
               {t("send_message")}
             </a>
-          </div>
+          </ul>
+      
+          <div className="d-sm-flex dropdown ms-auto ms-lg-0 order-lg-last">
+              <a
+                className="dropdown-item dropdown-toggle btn-primary"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <Globe />
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => changeLanguage("en")}
+                  >
+                    {t("en")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => {
+                      changeLanguage("sv");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {t("sv")}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Navbar Collapsed  */}
+
           <button
             className="navbar-toggler collapsed"
             type="button"
@@ -97,6 +100,7 @@ const Navbar = () => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="open">
               <List size={28} color="#1C4456" className="me-1" />
@@ -108,7 +112,10 @@ const Navbar = () => {
             </span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {menuData.map((item) => {
                 return (
@@ -138,7 +145,7 @@ const Navbar = () => {
                         href="#"
                         data-bs-toggle={item.children ? "dropdown" : ""}
                       >
-                        {item.parent}
+                        {t(item.parent)}
                         <CaretDown size={16} />
                       </a>
                     )}
@@ -148,7 +155,7 @@ const Navbar = () => {
                         {item.children.map((child) => (
                           <li key={child.id}>
                             <Link className="dropdown-item" href={child.link}>
-                              {child.parent}
+                              {t(child.parent)}
                             </Link>
                           </li>
                         ))}
@@ -165,7 +172,7 @@ const Navbar = () => {
                                   href={child.link}
                                   className="dropdown-item"
                                 >
-                                  {child.parent}
+                                  {t(child.parent)}
                                 </Link>
                               </li>
                             ))}
@@ -178,7 +185,7 @@ const Navbar = () => {
                                     href={child.link}
                                     className="dropdown-item"
                                   >
-                                    {child.parent}
+                                    {t(child.parent)}
                                   </Link>
                                 ) : (
                                   <Link
@@ -186,7 +193,7 @@ const Navbar = () => {
                                     data-bs-toggle="modal"
                                     className="dropdown-item"
                                   >
-                                    {child.parent}
+                                    {t(child.parent)}
                                   </Link>
                                 )}
                               </li>
@@ -199,6 +206,7 @@ const Navbar = () => {
                 );
               })}
             </ul>
+
           </div>
         </div>
       </nav>
