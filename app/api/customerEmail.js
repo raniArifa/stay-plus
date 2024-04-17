@@ -312,24 +312,16 @@ return `
                   <!-- START MAIN CONTENT AREA -->
                   <tr>
                     <td class="wrapper">
-                      <p>Welcome to Stay Plus! </p>
-                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
-                        <tbody>
-                          <tr>
-                            <td align="left">
-
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <p>Welcome! </p>
+                      
                       <p> We're excited to have you on board. We've received your request and one of our team members will be in touch shortly.
 
-We look forward to starting our collaboration.
-
-Best regards,
-
-Stay Plus</p>
-                    </td>
+We look forward to starting our collaboration.</p>
+              
+ <p>
+Best Regards,</p>
+<p>
+Team at Stay Plus </p>     </td>
                   </tr>
     
                   <!-- END MAIN CONTENT AREA -->
