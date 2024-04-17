@@ -304,103 +304,38 @@ return `
          
             <td class="container">
               <div class="content">
-			  <form method="post" id="myform">  
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Textbox" class="form-label">Full Name</label>
-          <input type="text" name="Textbox" id="Textbox" class="form-control"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Number" class="form-label">Company Name</label>
-          <input type="number" class="form-control" name="Number" id="Number"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Email" class="form-label">Email:</label>
-          <input type="email" class="form-control" name="Email" id="Email"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Phone" class="form-label">Phone:</label>
-          <input type="tel" class="form-control" name="Phone" id="Phone"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Textbox_1" class="form-label">Type of Housing</label>
-          <input type="text" name="Textbox_1" id="Textbox_1" class="form-control"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Textbox_2" class="form-label">No. of Apartments</label>
-          <input type="text" name="Textbox_2" id="Textbox_2" class="form-control"/>
-        </div>
-      </div>
-      <div class="row mb-3">  
-        <div class="col-6">  
-          <label for="Textbox_3" class="form-label">Area</label>
-          <input type="text" name="Textbox_3" id="Textbox_3" class="form-control"/>
-        </div>
-      </div>
-    </form>
     
                 <!-- START CENTERED WHITE CONTAINER -->
-                <span class="preheader">Customer Contact Form</span>
+                <span class="preheader">Thankyou for your interest at Stayplus!</span>
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
     
                   <!-- START MAIN CONTENT AREA -->
                   <tr>
                     <td class="wrapper">
-                      <p>Hello</p>
-                      <p>A new customer is here! </p>
+                      <p>Welcome to Stay Plus! </p>
                       <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                         <tbody>
                           <tr>
                             <td align="left">
-                              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                  <tr>
-                                    <td> <a href="http://htmlemail.io" target="_blank">Call To Action</a> </td>
-                                  </tr>
-                                </tbody>
-                              </table>
+
                             </td>
                           </tr>
                         </tbody>
                       </table>
-                      <p>This is a really simple email template. It's sole purpose is to get the recipient to click the button with no distractions.</p>
-                      <p>Good luck! Hope it works.</p>
+                      <p> We're excited to have you on board. We've received your request and one of our team members will be in touch shortly.
+
+We look forward to starting our collaboration.
+
+Best regards,
+
+Stay Plus</p>
                     </td>
                   </tr>
     
                   <!-- END MAIN CONTENT AREA -->
                   </table>
     
-	
-	
-                <!-- START FOOTER -->
-                <div class="footer">
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td class="content-block">
-                        <span class="apple-link">${customerData.fullName}</span>
-                        <br> Don't like these emails? <a href="http://htmlemail.io/blog">Unsubscribe</a>.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="content-block powered-by">
-                        Powered by <a href="http://htmlemail.io">HTMLemail.io</a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-    
-                <!-- END FOOTER -->
+               
                 
     <!-- END CENTERED WHITE CONTAINER --></div>
             </td>
