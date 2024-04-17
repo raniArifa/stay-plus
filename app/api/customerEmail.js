@@ -1,3 +1,4 @@
+export const customerEmailBody = `
 <!doctype html>
     <html lang="en">
       <head> 
@@ -407,4 +408,4 @@
       </body>
     </html>
    
-}
+}`

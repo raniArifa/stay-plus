@@ -1,7 +1,6 @@
 import { save } from "../mongoDBOperations";
 import { sendEmail } from "../emailOperations";
-import readFileContent from "../readFile";
-import { adminEmailContent } from "../adminEmailContent";
+import { customerEmailBody } from "../customerEmail";
 
 export const POST = async (request, response) => {
   try {
@@ -13,8 +12,8 @@ export const POST = async (request, response) => {
     // 2. first send email to recipent
     const { emailAddress } = body;
     const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
-    const htmlForCustomer = await readFileContent("app/api/customerEmail.html");
-    sendEmail(subjectForCustomer, htmlForCustomer, emailAddress);
+
+    sendEmail(subjectForCustomer, customerEmailBody, emailAddress);
     // 3. Success response back
     return Response.json({
       message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
