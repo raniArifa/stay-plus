@@ -1,4 +1,5 @@
-export const customerEmailBody = `
+export const customerEmailBody =(customerData)=> {
+return `
 <!doctype html>
     <html lang="en">
       <head> 
@@ -409,3 +410,4 @@ export const customerEmailBody = `
     </html>
    
 }`
+}

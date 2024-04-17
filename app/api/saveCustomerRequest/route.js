@@ -13,7 +13,7 @@ export const POST = async (request, response) => {
     const { emailAddress } = body;
     const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
 
-    sendEmail(subjectForCustomer, customerEmailBody, emailAddress);
+    sendEmail(subjectForCustomer, customerEmailBody(body), emailAddress);
     // 3. Success response back
     return Response.json({
       message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
