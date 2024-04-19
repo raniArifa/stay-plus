@@ -29,7 +29,7 @@ const Counter = ({ className }) => {
               {counterData.map((item) => {
                 const { id, description, Icon, leftIcon, count, rightIcon } =
                   item;
-                  const translatedDescription = t(description);
+                const translatedDescription = t(description);
                 return (
                   <div key={id} className="counter--content">
                     <div className="counter--content-icon">{Icon}</div>

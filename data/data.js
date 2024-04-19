@@ -44,9 +44,9 @@ export const counterData = [
   },
   {
     id: 3,
-    count: 500,
+    count: 100,
     leftIcon: "",
-    rightIcon: "+",
+    rightIcon: "k +",
     Icon: <FireIcon />,
     description: "daily_completed_transactions",
   },
