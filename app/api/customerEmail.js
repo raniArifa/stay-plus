@@ -1,5 +1,5 @@
-export const customerEmailBody =(customerData)=> {
-return `
+export const customerEmailBody = (customerData) => {
+  return `
 <!doctype html>
     <html lang="en">
       <head> 
@@ -315,9 +315,7 @@ return `
                       <p>Welcome! </p>
                       
                       <p> We're excited to have you on board. We've received your request and one of our team members will be in touch shortly.
-
 We look forward to starting our collaboration.</p>
-              
  <p>
 Best Regards,</p>
 <p>
@@ -336,5 +334,5 @@ Team at Stay Plus </p>     </td>
       </body>
     </html>
    
-}`
-}
+}`;
+};

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import {ArrowRight} from "phosphor-react";
 
-export const metadata = {title: "404 | RealStatic"};
+export const metadata = {title: "404 | StayPlus"};
 
 const NotFound = () => {
   return (
