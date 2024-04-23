@@ -73,7 +73,7 @@ const FeatureBottom = () => {
 </span>
             </li>
           </ul>
-          <a href="/about" className="btn btn-small">
+          <a href="/contact" className="btn btn-small">
           {t('learn_more')}
 
           </a>
