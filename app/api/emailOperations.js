@@ -22,16 +22,16 @@ export const sendEmail = async (subject, html, toEmailAddress) => {
 
   const mailOptions = {
     from: user,
-    toEmailAddress,
+    to: toEmailAddress,
     subject,
     html,
   };
 
-  return transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      return error;
-    } else {
-      return info.response;
-    }
-  });
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    return info.response;
+  } catch (error) {
+    console.error("Error sending email:", error);
+    throw error;
+  }
 };
