@@ -96,7 +96,6 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-7 col-md-10 mx-auto">
             <div className="contact-title text-center">
-              {/* //Maximize Your Property's Revenue */}
               <h3>{t("maximize")}</h3>
               <p>{t("contactFormHeader")}</p>
             </div>

@@ -24,6 +24,11 @@ export const menuData = [
     parent: "contact",
     link: "/contact",
   },
+  {
+    id: 3,
+    parent: "Listings",
+    link: "/property",
+  },
 ];
 
 // COUNTER DATA
@@ -92,7 +97,6 @@ export const counterData = [
     },
   },
 ]; */
-
 
 
 // SOCIAL MEDIA DATA

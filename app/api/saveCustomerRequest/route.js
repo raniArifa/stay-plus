@@ -9,11 +9,12 @@ export const POST = async (request, response) => {
     // add creation time using current date time
     body.creationTime = new Date().toLocaleDateString();
     await save(body);
+   /* TODO: For now no need to send any email
     // 2. first send email to recipent
     const { emailAddress } = body;
     const subjectForCustomer = process.env.CUSTOMER_EMAIL_SUBJECT || "";
 
-    sendEmail(subjectForCustomer, customerEmailBody(body), emailAddress);
+    sendEmail(subjectForCustomer, customerEmailBody(body), emailAddress); */
     // 3. Success response back
     return Response.json({
       message: `Thankyou. We've received your request and one of our team members will be in touch shortly.
