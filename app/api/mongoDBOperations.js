@@ -18,5 +18,5 @@ export const get = async (id) => {
       return document;
     }
   }
-  return collection.find({}).toArray();
+  return collection.find({}).sort({creationTime:-1}).toArray();
 };

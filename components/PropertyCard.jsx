@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 
 const PropertyCard = ({
   fullName,
-  emailAddress,
+  companyName,
   phoneNumber,
   numberOfApartments,
+  typeOfHousing,
   _id,
+  creationTime
 }) => {
   return (
     <motion.div
@@ -27,14 +29,14 @@ const PropertyCard = ({
           <motion.span>{fullName}</motion.span>
         </motion.div>
         <motion.div className="d-flex align-items-center properties-card--content--address">
-          <motion.span>{emailAddress}</motion.span>
+          <motion.span>{companyName}</motion.span>
         </motion.div>
         <motion.div className="d-flex align-items-center properties-card--content--address">
           <motion.span>{phoneNumber}</motion.span>
         </motion.div>
         <motion.div className="d-flex align-items-center properties-card--content--address">
           <motion.span>
-            {numberOfApartments ? numberOfApartments : 0} Apartments
+            {numberOfApartments ? numberOfApartments : 0} {typeOfHousing}
           </motion.span>
         </motion.div>
         <motion.div className="properties-card--footer d-flex align-items-center justify-content-between">

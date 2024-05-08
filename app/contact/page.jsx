@@ -24,7 +24,7 @@ const Contact = () => {
     fullName: "",
     companyName: "",
     emailAddress: "",
-    typeOfHousing: "apartments",
+    typeOfHousing: "Apartments",
     phoneNumber: "",
     numberOfApartments: "",
     areaOfHousing: "",

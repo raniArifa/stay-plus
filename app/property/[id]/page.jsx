@@ -46,6 +46,7 @@ const page = ({ params }) => {
     typeOfHousing,
     companyName,
     extraInfo,
+    creationTime,
   } = property;
 
   return (
@@ -63,20 +64,23 @@ const page = ({ params }) => {
                 <div className="property-details-content-title">
                   <h4>{areaOfHousing}</h4>
                   <p className="bold">
-                    {numberOfApartments ? numberOfApartments : 0} Apartments
+                    {numberOfApartments ? numberOfApartments : 0}  {typeOfHousing}
                   </p>
                 </div>
                 <div className="property-details-content-details">
                   <p className="bold">{fullName}</p>
-                  <p>{emailAddress}</p>
+                  <p >Company: {companyName}</p>
+                 
                 </div>
                 <div className="property-details-content-details">
-                  <p className="bold">{phoneNumber}</p>
-                  <p>{typeOfHousing}</p>
+                <p>Contact# {phoneNumber}</p>
+                  <p>Email: {emailAddress}</p>
+                
                 </div>
                 <div className="property-details-content-details">
-                  <p className="bold">{companyName}</p>
-                  <p>{extraInfo}</p>
+                <p>Type of Housing: {typeOfHousing}</p>
+                  <p>Extra Info: {extraInfo}</p>
+                  <p>Date: {creationTime}</p>
                 </div>
               </div>
             </div>

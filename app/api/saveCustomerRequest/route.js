@@ -7,7 +7,7 @@ export const POST = async (request, response) => {
     // 1. First save information to database
     const body = await request.json();
     // add creation time using current date time
-    body.creationTime = new Date().toLocaleDateString();
+    body.creationTime = new Date().toLocaleString();
     await save(body);
    /* TODO: For now no need to send any email
     // 2. first send email to recipent
