@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { hasCookie, setCookie } from "cookies-next";
 import Link from "next/link";
 
- const CookiesConsent = () => {
+export default function CookiesConsent() {
   const [showConsent, setShowConsent] = useState(true);
   useEffect(() => {
     setShowConsent(hasCookie("localConsent"));
@@ -39,5 +39,4 @@ import Link from "next/link";
       </div>
     </div>
   );
- };
-  export default CookiesConsent;
+}
