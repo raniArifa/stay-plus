@@ -10,12 +10,13 @@
     "export": "yarn build && next export"
   },
   "dependencies": {
-    "homepage": "./",
     "bootstrap": "^5.0.0",
+    "cookies-next": "^4.1.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "framer-motion": "^10.12.18",
     "gray-matter": "^4.0.3",
+    "homepage": "./",
     "i18next": "^23.10.1",
     "micro": "^10.0.1",
     "mongodb": "^4.13.0",
