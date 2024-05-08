@@ -1,9 +1,9 @@
 "use client";
-import { Manrope } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "@/components/Navbar";
 import "@/scss/theme.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Manrope } from "next/font/google";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 
