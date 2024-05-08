@@ -19,7 +19,6 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <I18nextProvider i18n={i18n}>
-     <CookiesConsent />
       <html lang="sv">
         <body suppressHydrationWarning={true} className={manrope.className}>
           <Navbar />
