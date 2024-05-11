@@ -1,4 +1,5 @@
 "use client";
+import { useGlobal } from "@/app/global-provider";
 import { menuData } from "@/data/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +11,14 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { i18n } = useTranslation();
+  const { isLoggedIn, setIsLoggedIn } = useGlobal();
+
+  const menu = () => {
+    if (!isLoggedIn) {
+      return menuData.filter((menu) => menu.id !== 3);
+    }
+    return menuData;
+  };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -56,41 +65,40 @@ const Navbar = () => {
               {t("send_message")}
             </a>
           </ul>
-      
           <div className="d-sm-flex dropdown ms-auto ms-lg-0 order-lg-last">
-              <a
-                className="dropdown-item dropdown-toggle btn-primary"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <Globe />
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => changeLanguage("en")}
-                  >
-                    {t("en")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => {
-                      changeLanguage("sv");
-                      setIsMenuOpen(false);
-                    }}
-                  >
-                    {t("sv")}
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <a
+              className="dropdown-item dropdown-toggle btn-primary"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <Globe />
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => changeLanguage("en")}
+                >
+                  {t("en")}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={() => {
+                    changeLanguage("sv");
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {t("sv")}
+                </a>
+              </li>
+            </ul>
+          </div>
 
-            {/* Navbar Collapsed  */}
+          {/* Navbar Collapsed  */}
 
           <button
             className="navbar-toggler collapsed"
@@ -117,7 +125,7 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {menuData.map((item) => {
+              {menu().map((item) => {
                 return (
                   <li
                     key={item.id}
@@ -168,12 +176,13 @@ const Navbar = () => {
                           <ul className="list-unstyled">
                             {item.children.slice(0, 5).map((child) => (
                               <li key={child.id}>
-                                <Link
+                                <a
                                   href={child.link}
                                   className="dropdown-item"
+                                  data-bs-toggle="modal"
                                 >
                                   {t(child.parent)}
-                                </Link>
+                                </a>
                               </li>
                             ))}
                           </ul>
@@ -206,7 +215,6 @@ const Navbar = () => {
                 );
               })}
             </ul>
-
           </div>
         </div>
       </nav>

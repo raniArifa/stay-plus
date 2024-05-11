@@ -1,5 +1,6 @@
 "use client";
 
+import { useGlobal } from "@/app/global-provider";
 import { useEffect, useState } from "react";
 
 const page = ({ params }) => {
@@ -11,36 +12,49 @@ const page = ({ params }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [showContent, setShowContent] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { isLoggedIn, setIsLoggedIn } = useGlobal();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    fetch(`/api/fetchCustomerData?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Network response was not ok.");
-        }
+    if (isLoggedIn) {
+      fetch(`/api/fetchCustomerData?id=${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .then((data) => {
-        if (data.errorDetails) {
-          setErrorMessage(data.message);
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Network response was not ok.");
+          }
+        })
+        .then((data) => {
+          if (data.errorDetails) {
+            setErrorMessage(data.message);
+            setLoading(false);
+            setShowContent(false);
+          } else {
+            setProperty(data.data);
+            setErrorMessage(null);
+            setLoading(false);
+            setShowContent(true);
+          }
+        })
+        .catch((error) => {
+          setErrorMessage(error.message);
           setLoading(false);
-        } else {
-          setProperty(data.data);
-          setErrorMessage(null);
-          setLoading(false);
-        }
-      })
-      .catch((error) => {
-        setErrorMessage(error.message);
-        setLoading(false);
-        throw error;
-      });
-  }, [id]);
+          setShowContent(false);
+          throw error;
+        });
+    } else {
+      setShowContent(false);
+      setLoading(false);
+      setErrorMessage("Only admin can see this page");
+    }
+  }, [id, isLoggedIn]);
   const {
     fullName,
     emailAddress,
@@ -55,21 +69,21 @@ const page = ({ params }) => {
 
   return (
     <>
-      {errorMessage && (
-        <div className="alert alert-danger" role="alert">
-          {errorMessage}
-        </div>
-      )}
-      {loading && (
-        <div className="text-center">
-          <div className="spinner-grow" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      )}
-      {!loading && (
-        <section className="property-details" id="property-details">
-          <div className="container">
+      <section className="property-details" id="property-details">
+        <div className="container">
+          {errorMessage && (
+            <div className="alert alert-danger" role="alert">
+              {errorMessage}
+            </div>
+          )}
+          {loading && (
+            <div className="text-center">
+              <div className="spinner-grow" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          )}
+          {showContent && (
             <div className="row">
               <div className="col-lg-8">
                 <div className="property-details-content">
@@ -96,9 +110,9 @@ const page = ({ params }) => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </section>
     </>
   );
 };

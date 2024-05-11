@@ -1,4 +1,5 @@
 "use client";
+import { useGlobal } from "@/app/global-provider";
 import { Keyhole, User } from "phosphor-react";
 import { useState } from "react";
 
@@ -9,6 +10,7 @@ const Login = () => {
   });
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
+  const { isLoggedIn, setIsLoggedIn } = useGlobal();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,17 +38,19 @@ const Login = () => {
             resetForm();
             setErrorMessage(null);
             setSuccessMessage(data.message);
-            sessionStorage.setItem("isLoggedIn", true);
-            window.location.reload();
+            setIsLoggedIn(true);
+            
           } else {
             setErrorMessage(data.message);
             setSuccessMessage(null);
+            setIsLoggedIn(false);
           }
         }
       })
       .catch((error) => {
         setErrorMessage(error.message);
         setSuccessMessage(null);
+        setIsLoggedIn(false);
         throw error;
       });
   };
