@@ -19,8 +19,8 @@ const MainPropertyArea = ({ propertiesData, errorMessage, loading }) => {
         )}
         <div className="listing">
           <PropertyPagination
-            limit={6}
-            showPaginationﬂ
+            limit={3}
+            showPagination={true}
             property={propertiesData}
           />
         </div>
