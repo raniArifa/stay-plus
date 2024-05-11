@@ -29,6 +29,18 @@ export const menuData = [
     parent: "Listings",
     link: "/property",
   },
+  {
+    id: 4,
+    parent: "Admin",
+    megamenu: true,
+    children: [
+      {
+        id: 4.1,
+        parent: "Log In",
+        link: "#login",
+      },
+    ],
+  },
 ];
 
 // COUNTER DATA
