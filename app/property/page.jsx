@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const Page = () => {
   const [propertiesData, setPropertiesData] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("api/fetchCustomerData", {
@@ -23,25 +24,21 @@ const Page = () => {
       .then((data) => {
         if (data.errorDetails) {
           setErrorMessage(data.message);
+          setLoading(false);
         } else {
           setPropertiesData(data.data);
           setErrorMessage(null);
+          setLoading(false);
         }
       })
       .catch((error) => {
         setErrorMessage(error.message);
+        setLoading(false);
         throw error;
       });
   }, []);
   return (
-    <>
-      {errorMessage && (
-        <div className="alert alert-danger" role="alert">
-          {errorMessage}
-        </div>
-      )}
-      <MainPropertyArea propertiesData={propertiesData} />
-    </>
+      <MainPropertyArea propertiesData={propertiesData} loading={loading} errorMessage={errorMessage} />
   );
 };
 
