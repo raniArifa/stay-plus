@@ -20,11 +20,12 @@ const Contact = () => {
   const [review, setReview] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [formValue, setFormValue] = useState({
     fullName: "",
     companyName: "",
     emailAddress: "",
-    typeOfHousing: "apartments",
+    typeOfHousing: "Apartments",
     phoneNumber: "",
     numberOfApartments: "",
     areaOfHousing: "",
@@ -54,6 +55,7 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     fetch("api/saveCustomerRequest", {
       method: "POST",
       headers: {
@@ -70,15 +72,18 @@ const Contact = () => {
       })
       .then((data) => {
         if (data.errorDetails) {
+          setLoading(false);
           setErrorMessage(data.message);
           setSuccessMessage(null);
         } else {
+          setLoading(false);
           setSuccessMessage(data.message);
           setErrorMessage(null);
           handleReset();
         }
       })
       .catch((error) => {
+        setLoading(false);
         setErrorMessage(error.message);
         setSuccessMessage(null);
         throw error;
@@ -96,7 +101,6 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-7 col-md-10 mx-auto">
             <div className="contact-title text-center">
-              {/* //Maximize Your Property's Revenue */}
               <h3>{t("maximize")}</h3>
               <p>{t("contactFormHeader")}</p>
             </div>
@@ -246,6 +250,13 @@ const Contact = () => {
                   </div>
                   <div className="w-100 contact-form-button">
                     <button type="submit" className="btn btn-large">
+                      {loading && (
+                        <span
+                          className="spinner-grow spinner-grow-sm"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                      )}
                       {t("send_message")}
                     </button>
                   </div>
