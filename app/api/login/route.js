@@ -3,9 +3,9 @@ export const GET = async (request) => {
     const username = request.nextUrl.searchParams.get("username");
     const password = request.nextUrl.searchParams.get("password");
     if (
-      process.env.ADMIN_LOGIN_USERNAME.toLocaleLowerCase() ===
-        username.toLocaleLowerCase() &&
-      process.env.ADMIN_LOGIN_PASSWORD === password.toLocaleLowerCase()
+      process.env.ADMIN_LOGIN_USERNAME ===
+        username &&
+      process.env.ADMIN_LOGIN_PASSWORD === password
     ) {
       return Response.json({
         message: "Login Success",
