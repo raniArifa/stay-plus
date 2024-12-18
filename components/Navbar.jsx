@@ -58,7 +58,7 @@ const Navbar = () => {
           </div>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-none d-sm-flex align-items-center ms-auto ms-lg-0 order-lg-last">
             <a
-              class="btn btn-outline btn-small d-none d-lg-inline-block"
+              className="btn btn-outline btn-small d-none d-lg-inline-block"
               href="/contact"
               role="button"
             >

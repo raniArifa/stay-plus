@@ -34,11 +34,6 @@ const Footer = () => {
                 <div className="footer-widget">
                   <h5>
                     {" "}
-                    <p className="contact-email mb-0">
-                      <a href="mailto:stayplus@staysthlm.se">
-                        stayplus@staysthlm.se
-                      </a>
-                    </p>
                   </h5>
                 </div>
               </div>
@@ -98,11 +93,6 @@ const Footer = () => {
                     <br /> Bromma, Sweden
                   </p>
 
-                  <p className="contact-email mb-0">
-                    <Link href="mailto:stayplus@staysthlm.se">
-                      stayplus@staysthlm.se
-                    </Link>
-                  </p>
                 </div>
                 <div>
                   <p className="footer-copyright">
@@ -185,11 +175,6 @@ const Footer = () => {
                     Stay in Sweden AB
                     <br /> Box 20011 SE-161 02
                     <br /> Bromma, Sweden
-                  </p>
-                  <p className="contact-email mb-0">
-                    <a href="mailto:stayplus@staysthlm.se">
-                      stayplus@staysthlm.se
-                    </a>
                   </p>
                 </div>
             </div>

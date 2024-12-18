@@ -56,5 +56,6 @@
   "daily_completed_transactions": "Daily completed <br> transactions",
   "regular_clients": "Regular Clients",
   "cookies_consent": "We use cookies to improve your user experience, statistics and view customized offers. By browsing further you accept that necessary cookies are used. You can read more here at Privacy Policy",
-  "privacy_policy" : "Privacy Policy"
+  "privacy_policy" : "Privacy Policy",
+  "accept": "Accept"
 }
