@@ -13,7 +13,7 @@ const page = () => {
               Last updated: <span>January 2024 </span>
             </p>
             <p>
-              Stay in Sweden AB (Stay Sthlm) is committed to being a trusted and
+              StayPlus is committed to being a trusted and
               responsible partner for all of its valued customers. This means
               that we are committed to operating in an open and transparent
               manner and in compliance with applicable laws and regulations,
@@ -56,7 +56,7 @@ const page = () => {
                   <p>
                     Contact information: such as name, address, company, phone
                     number, email address, employment details of tenants,
-                    apartment information. As a tenant of Stay in Sweden AB
+                    apartment information. As a tenant of StayPlus
                     Personal data is all data related to you or other family
                     members. According to the regulation, you are the owner of
                     your personal information and thus you are entitled to be
@@ -119,11 +119,11 @@ const page = () => {
                 networks. We would like to provide you with the best experience,
                 therefore the communication might be tailored based on the data
                 collected and your preferences. We would like to inform you as a
-                tenant of Stay Sthlm (Stay in Sweden AB), that we process your
+                tenant of Stay Plus, that we process your
                 personal data in order to maintain our rental relationship. You
                 may withdraw your consent to marketing at any time For example,
                 you can unsubscribe from messages by following the unsubscribe
-                instructions within the message or contact info@staysthlm.se and
+                instructions within the message or contact and
                 we will happily assist you.
               </p>
             </div>
@@ -163,8 +163,7 @@ const page = () => {
               <p>
                 If you have any questions regarding these rights, or if you
                 would like to exercise any of these rights, you may do so in
-                writing, by phone +46 (8) 410 337 80 or via email
-                info@staysthlm.se. Please note that exercising these rights may
+                writing, by phone. Please note that exercising these rights may
                 impact our ability to provide you with certain services. Read
                 more at: www.datainspektionen.se.
               </p>
@@ -172,7 +171,7 @@ const page = () => {
             <div className="privacy-rules">
               <h5>7. Security</h5>
               <p>
-                Stay Sthlm (Stay in Sweden AB) is committed to being a trusted
+                Stay Plus is committed to being a trusted
                 and responsible partner for all of its valued customers. The
                 company will take appropriate technical and organizational
                 measures in line with applicable data protection laws, including

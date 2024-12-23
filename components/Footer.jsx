@@ -25,11 +25,7 @@ const Footer = () => {
                   />
                 </div>
                 <div className="footer-address">
-                  <p>
-                    Stay in Sweden AB
-                    <br /> Box 20011 SE-161 02
-                    <br /> Bromma, Sweden
-                  </p>
+
                 </div>
                 <div className="footer-widget">
                   <h5>
@@ -66,7 +62,7 @@ const Footer = () => {
           <div className="row">
             <div className="offset-1 col-11">
               <p className="footer-copyright">
-                Stay in Sweden AB © {new Date().getFullYear()}
+                StayPlus AB © {new Date().getFullYear()}
               </p>
             </div>
           </div>
@@ -87,16 +83,13 @@ const Footer = () => {
                   />
                 </div>
                 <div className="footer-address">
-                  <p>
-                    Stay in Sweden AB
-                    <br /> Box 20011 SE-161 02
-                    <br /> Bromma, Sweden
-                  </p>
+                  
+                    StayPlus
 
                 </div>
                 <div>
                   <p className="footer-copyright">
-                    Stay in Sweden AB {new Date().getFullYear()}
+                    StayPlus {new Date().getFullYear()}
                   </p>
                 </div>
               </div>
@@ -171,15 +164,10 @@ const Footer = () => {
 
             <div className="col-12">
                 <div className="footer-address">
-                  <p>
-                    Stay in Sweden AB
-                    <br /> Box 20011 SE-161 02
-                    <br /> Bromma, Sweden
-                  </p>
                 </div>
             </div>
                 <p className="footer-copyright">
-          Stay in Sweden AB {new Date().getFullYear()}
+          StayPlus AB {new Date().getFullYear()}
         </p>
       </section>
     </>

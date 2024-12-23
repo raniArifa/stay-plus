@@ -91,7 +91,7 @@ export const counterData = [
   {
     id: 2,
     review:
-      "It is always easy to work with the nice and professional employees at Stay Sthlm when we are looking for housing for our corporate customers. I can warmly recommend Stay Sthlm when you are looking for corporate housing.",
+      "It is always easy to work with the nice and professional employees at Stay Plus when we are looking for housing for our corporate customers. I can warmly recommend Stay Plus when you are looking for corporate housing.",
     user: {
       name: "Viktoria L.",
       img: "/images/testimonial/client2.jpg",
@@ -101,7 +101,7 @@ export const counterData = [
   {
     id: 3,
     review:
-      "A professional and responsive company offering affordable short and long term accommodation to suit all needs. Stay Sthlm are efficient and friendly, one of our most trusted and reliable property agencies",
+      "A professional and responsive company offering affordable short and long term accommodation to suit all needs. Stay Plus are efficient and friendly, one of our most trusted and reliable property agencies",
     user: {
       name: "Jenny D.",
       img: "/images/testimonial/client3.jpg",
